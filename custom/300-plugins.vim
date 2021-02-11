@@ -27,7 +27,6 @@ call plug#begin('~/.vim/bundle')
     Plug 'micarmst/vim-spellsync'
     Plug 'mileszs/ack.vim'
     Plug 'ntpeters/vim-better-whitespace'
-    Plug 'preservim/nerdcommenter'
     Plug 'preservim/nerdtree'
     Plug 'reedes/vim-lexical'
     Plug 'ryanoasis/vim-devicons'

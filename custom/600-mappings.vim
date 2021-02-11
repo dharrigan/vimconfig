@@ -60,7 +60,6 @@ nnoremap <silent> <Leader>a         :Clap grep<CR>
 nnoremap <silent> <Leader>b         :Clap buffers<CR>
 nnoremap <silent> <Leader>bo        :BufOnly<cr>
 nnoremap <silent> <Leader>cu        :ConjureConnect<CR>
-nnoremap <silent> <Leader>cuu       <Plug>NERDCommenterUncomment
 nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle<CR>
 nnoremap <silent> <Leader>f         :Clap files --hidden<CR>
 nnoremap <silent> <Leader>in        :IndentLinesToggle<CR>
@@ -81,9 +80,11 @@ nnoremap <silent> <Leader>gl        :Gpull<cr>
 nnoremap <silent> <Leader>gp        :Gpush<cr>
 nnoremap <silent> <Leader>gs        :Gstatus<cr>
 
-nmap <silent> <Leader>rn         <Plug>(coc-rename)
-nmap <silent> <Leader>u          <Plug>(coc-references)
-nmap <silent> gd                 <Plug>(coc-definition)
+nmap <silent> <Leader>cr            <Plug>(coc-rename)
+nmap <silent> <Leader>cf            <Plug>(coc-references)
+xmap <silent> <Leader>c             <Plug>(coc-codeaction-selected)
+nmap <silent> <Leader>c             <Plug>(coc-codeaction-line)
+nmap <silent> gd                    <Plug>(coc-definition)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Check Backspace - has to be SCRIPT LOCAL (aka SID)
@@ -98,7 +99,8 @@ inoremap <silent> <expr><C-J>       pumvisible() ? "\<C-n>" : <SID>checkBackspac
 
 inoremap <silent> <expr><C-K>       pumvisible() ? "\<C-p>" : "\<C-K>"
 inoremap <silent> <expr><S-TAB>     pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <silent> <expr><CR>        pumvisible() ? (complete_info().selected == -1 ? '<C-y><CR>' : '<C-y>') : '<CR>'
+"inoremap <silent> <expr><CR>        pumvisible() ? (complete_info().selected == -1 ? '<C-y><CR>' : '<C-y>') : '<CR>'
+inoremap <silent> <expr><CR>        pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 nmap <S-Right> <Plug>(sexp_capture_next_element)<Plug>(sexp_indent)
 nmap <S-Left> <Plug>(sexp_emit_tail_element)<Plug>(sexp_indent)
