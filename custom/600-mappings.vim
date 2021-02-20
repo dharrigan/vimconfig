@@ -81,7 +81,7 @@ nnoremap <silent> <Leader>gp        :Gpush<cr>
 nnoremap <silent> <Leader>gs        :Gstatus<cr>
 
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
-nmap <silent> <Leader>cf            <Plug>(coc-references)
+nmap <silent> <Leader>cs            <Plug>(coc-references)
 xmap <silent> <Leader>c             <Plug>(coc-codeaction-selected)
 nmap <silent> <Leader>c             <Plug>(coc-codeaction-line)
 nmap <silent> gd                    <Plug>(coc-definition)

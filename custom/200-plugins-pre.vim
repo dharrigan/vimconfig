@@ -62,6 +62,14 @@ let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,
 let g:sexp_enable_insert_mode_mappings = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => 'liuchengxu/vim-clap'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:clap_popup_input_delay = 10
+let g:clap_provider_grep_delay = 10
+let g:clap_open_preview = 'never'
+let g:clap_layout = { 'relative': 'editor', 'width': '50%', 'height': '33%', 'row': '33%', 'col': '25%' }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => liuchengxu/vista.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vista#renderer#enable_icon = 1
@@ -106,6 +114,7 @@ let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'help']
 " => olical/conjure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:conjure#log#botright = 1
+let g:conjure#log#hud#height = 1.0
 let g:conjure#eval#comment_prefix = ";; "
 let g:conjure#mapping#def_word = v:false
 let g:conjure#mapping#doc_word = v:false

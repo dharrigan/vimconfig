@@ -16,34 +16,38 @@ augroup END
 
 augroup generic_aug
   autocmd!
-  autocmd BufEnter *                                    call AutoRestoreWinView()
-  autocmd BufLeave *                                    call AutoSaveWinView()
-  autocmd BufRead *                                     silent! set fileformat=unix
-  autocmd BufReadCmd,FileReadCmd,SourceCmd jar:file://* call LoadClojureContent(expand("<amatch>"))
-  autocmd BufWinEnter *                                 silent! :%foldopen!
-  autocmd BufWinLeave *                                 call clearmatches()
-  autocmd CursorHold *                                  silent call CocActionAsync('highlight')
-  autocmd InsertLeave,CompleteDone *                    if pumvisible() == 0 | silent! pclose | endif
+  autocmd BufEnter *                  call AutoRestoreWinView()
+  autocmd BufLeave *                  call AutoSaveWinView()
+  autocmd BufRead *                   silent! set fileformat=unix
+  autocmd WinEnter    jar:file://*    ParinferOff
+  autocmd BufEnter    jar:file://*    ParinferOff
+  autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<amatch>"))
+  autocmd BufLeave    jar:file://*    ParinferOn
+  autocmd WinLeave    jar:file://*    ParinferOn
+  autocmd BufWinEnter *               silent! :%foldopen!
+  autocmd BufWinLeave *               call clearmatches()
+  autocmd CursorHold *                silent call CocActionAsync('highlight')
+  autocmd InsertLeave,CompleteDone *  if pumvisible() == 0 | silent! pclose | endif
 augroup END
 
 augroup filetypes_aug
   autocmd!
-  autocmd FileType clap_input           inoremap <silent> <buffer> <Esc> <Esc>:call clap#handler#exit()<CR>
-  autocmd FileType fzf                  set laststatus=0 noshowmode noruler | au BufLeave <buffer> set laststatus=2 showmode ruler
-  autocmd FileType go                   setlocal sw=4 ts=4 sts=4 noexpandtab
-  autocmd FileType json                 setlocal conceallevel=0 foldmethod=syntax foldlevel=999
-  autocmd FileType mail                 call lexical#init()
-  autocmd FileType mail                 setlocal comments=nb:> tw=70 spell
-  autocmd FileType make                 setlocal nolist noexpandtab sw=4 ts=4 sts=4
-  autocmd FileType sql                  setlocal formatprg=pg_format\ -f2\ -u2\ -
-  autocmd FileType text                 setlocal tw=70 spell
-  autocmd FileType text                 call lexical#init()
-  autocmd FileType yaml                 setlocal sw=2 ts=2 sts=2
+  autocmd FileType clap_input         inoremap <silent> <buffer> <Esc> <Esc>:call clap#handler#exit()<CR>
+  autocmd FileType fzf                set laststatus=0 noshowmode noruler | au BufLeave <buffer> set laststatus=2 showmode ruler
+  autocmd FileType go                 setlocal sw=4 ts=4 sts=4 noexpandtab
+  autocmd FileType json               setlocal conceallevel=0 foldmethod=syntax foldlevel=999
+  autocmd FileType mail               call lexical#init()
+  autocmd FileType mail               setlocal comments=nb:> tw=70 spell
+  autocmd FileType make               setlocal nolist noexpandtab sw=4 ts=4 sts=4
+  autocmd FileType sql                setlocal formatprg=pg_format\ -f2\ -u2\ -
+  autocmd FileType text               setlocal tw=70 spell
+  autocmd FileType text               call lexical#init()
+  autocmd FileType yaml               setlocal sw=2 ts=2 sts=2
 augroup END
 
 augroup user_aug
   autocmd!
-  autocmd User CocJumpPlaceholder       call CocActionAsync('showSignatureHelp')
+  autocmd User CocJumpPlaceholder     call CocActionAsync('showSignatureHelp')
 augroup END
 
 augroup numbertoggle_aug

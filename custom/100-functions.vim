@@ -42,8 +42,7 @@ function! LoadClojureContent(uri)
     setfiletype clojure
     let content = CocRequest('clojure-lsp', 'clojure/dependencyContents', {'uri': a:uri})
     call setline(1, split(content, "\n"))
-    setl nomodified
-    setl readonly
+    setl nomodified readonly
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
