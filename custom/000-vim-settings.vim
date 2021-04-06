@@ -80,7 +80,7 @@ set tabstop=4
 set tags+=tags;$HOME
 set termguicolors
 set textwidth=256
-set timeoutlen=250
+set ttimeoutlen=100
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 set undodir=$HOME/.vim/undos
 set undofile
@@ -88,6 +88,7 @@ set updatetime=300
 set viewoptions=cursor,folds,options,slash,unix
 set viminfo='100,f1,<500,/100,:100,%
 set visualbell
+set whichwrap=<,>,[,],b,
 set wildignore=*.class,*.o,.git,node_modules,*~,build,out,target,.svn,.hg
 set wildmenu
 set wildmode=longest,list,full

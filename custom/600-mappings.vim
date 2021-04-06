@@ -123,8 +123,8 @@ endfunction
 nnoremap <silent> <c-space> coc#refresh<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <silent> cram :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'add-missing-libspec', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
-"nnoremap <silent> crcn :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'clean-ns', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
-"nnoremap <silent> crcp :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'cycle-privacy', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
+nnoremap <silent> crcn :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'clean-ns', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
+nnoremap <silent> crcp :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'cycle-privacy', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
 
 command! W w !sudo tee % > /dev/null
 command! PU PlugClean! | PlugUpdate | PlugUpgrade
@@ -133,7 +133,7 @@ command! Q q
 " FZF + RG
 command! -bang -nargs=* Rg
 \ call fzf#vim#grep(
-\   'rg --column --line-number --hidden --smart-case --no-heading --color=always '.shellescape(<q-args>), 1,
+\   'rg --column --line-number --hidden --smart-case --no-heading --color=always --follow -g \'!.git/\''.shellescape(<q-args>), 1,
 \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
 \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
 \   <bang>0)

@@ -79,6 +79,14 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Crontab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup direnv_aug
+  autocmd!
+  autocmd BufNewFile,BufRead .envrc             setf direnv
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Crontab
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup crontab_aug
   autocmd!
   autocmd BufNewFile,BufRead /tmp/crontab*      setf crontab

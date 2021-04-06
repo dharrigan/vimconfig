@@ -118,6 +118,7 @@ let g:conjure#log#hud#height = 1.0
 let g:conjure#eval#comment_prefix = ";; "
 let g:conjure#mapping#def_word = v:false
 let g:conjure#mapping#doc_word = v:false
+let g:conjure#client#clojure#nrepl#test#current_form_names = ['deftest', 'defexpect']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => preservim/nerdtree
