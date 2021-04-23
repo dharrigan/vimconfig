@@ -74,6 +74,8 @@ set smartcase
 set smarttab
 set softtabstop=4
 set spelllang=en_gb
+set splitbelow
+set splitright
 set startofline
 set statusline=%<%F%h%m%r%=%{&ff}\ %l,%c%V\ %P\ %#warningmsg#\ %*
 set tabstop=4

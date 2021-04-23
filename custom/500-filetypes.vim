@@ -19,6 +19,7 @@ augroup generic_aug
   autocmd BufEnter *                  call AutoRestoreWinView()
   autocmd BufLeave *                  call AutoSaveWinView()
   autocmd BufRead *                   silent! set fileformat=unix
+  autocmd FocusGained,BufEnter *      :checktime
   autocmd WinEnter    jar:file://*    ParinferOff
   autocmd BufEnter    jar:file://*    ParinferOff
   autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<amatch>"))

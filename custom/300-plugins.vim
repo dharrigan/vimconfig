@@ -45,8 +45,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'Olical/conjure', { 'branch': 'develop', 'for': 'clojure' }
     Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
     Plug 'guns/vim-clojure-highlight', {'for': 'clojure'}
-    "Plug 'guns/vim-clojure-static', {'for': 'clojure'}
-    Plug 'clojure-vim/clojure.vim', {'for': 'clojure'} " a fork of vim-clojure-static with improvements!
+    Plug 'clojure-vim/clojure.vim', {'for': 'clojure'}
     Plug 'guns/vim-sexp', {'for': 'clojure'}
     Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 

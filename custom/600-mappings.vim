@@ -69,6 +69,7 @@ nnoremap <silent> <Leader>nv        :NV<CR>
 nnoremap <silent> <Leader>p         :Clap providers<CR>
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 
+nnoremap <silent> <Leader>g         :Git<cr>
 nnoremap <silent> <Leader>gb        :Gblame<cr>
 nnoremap <silent> <Leader>gca       :Gcommit --all --verbose<cr>
 nnoremap <silent> <Leader>gcc       :Gcommit --verbose<cr>
