@@ -81,10 +81,10 @@ nnoremap <silent> <Leader>gl        :Gpull<cr>
 nnoremap <silent> <Leader>gp        :Gpush<cr>
 nnoremap <silent> <Leader>gs        :Gstatus<cr>
 
+nmap <silent> <Leader>c             <Plug>(coc-codeaction-cursor)
+nmap <silent> <Leader>cl            <Plug>(coc-codeaction-line)
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
 nmap <silent> <Leader>cs            <Plug>(coc-references)
-xmap <silent> <Leader>c             <Plug>(coc-codeaction-selected)
-nmap <silent> <Leader>c             <Plug>(coc-codeaction-line)
 nmap <silent> gd                    <Plug>(coc-definition)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,7 +101,8 @@ inoremap <silent> <expr><C-J>       pumvisible() ? "\<C-n>" : <SID>checkBackspac
 inoremap <silent> <expr><C-K>       pumvisible() ? "\<C-p>" : "\<C-K>"
 inoremap <silent> <expr><S-TAB>     pumvisible() ? "\<C-p>" : "\<S-TAB>"
 "inoremap <silent> <expr><CR>        pumvisible() ? (complete_info().selected == -1 ? '<C-y><CR>' : '<C-y>') : '<CR>'
-inoremap <silent> <expr><CR>        pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent> <expr><CR>        pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
 nmap <S-Right> <Plug>(sexp_capture_next_element)<Plug>(sexp_indent)
 nmap <S-Left> <Plug>(sexp_emit_tail_element)<Plug>(sexp_indent)
