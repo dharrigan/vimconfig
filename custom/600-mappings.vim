@@ -81,6 +81,8 @@ nnoremap <silent> <Leader>gl        :Gpull<cr>
 nnoremap <silent> <Leader>gp        :Gpush<cr>
 nnoremap <silent> <Leader>gs        :Gstatus<cr>
 
+nmap <silent> <C-J>                 <Plug>(coc-diagnostic-prev)
+nmap <silent> <C-K>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <Leader>c             <Plug>(coc-codeaction-cursor)
 nmap <silent> <Leader>cl            <Plug>(coc-codeaction-line)
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
