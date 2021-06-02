@@ -118,7 +118,12 @@ let g:conjure#log#hud#height = 1.0
 let g:conjure#eval#comment_prefix = ";; "
 let g:conjure#mapping#def_word = v:false
 let g:conjure#mapping#doc_word = v:false
+let g:conjure#eval#gsubs = {'do-comment': ['^%(comment[%s%c]', '(do ']}
 let g:conjure#client#clojure#nrepl#test#current_form_names = ['deftest', 'defexpect']
+let g:conjure#client#clojure#nrepl#connection#auto_repl#hidden = v:true
+let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
+let g:conjure#highlight#enabled = 1
+let g:conjure#highlight#timeout = 250
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => preservim/nerdtree

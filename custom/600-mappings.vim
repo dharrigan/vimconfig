@@ -102,7 +102,6 @@ inoremap <silent> <expr><C-J>       pumvisible() ? "\<C-n>" : <SID>checkBackspac
 
 inoremap <silent> <expr><C-K>       pumvisible() ? "\<C-p>" : "\<C-K>"
 inoremap <silent> <expr><S-TAB>     pumvisible() ? "\<C-p>" : "\<S-TAB>"
-"inoremap <silent> <expr><CR>        pumvisible() ? (complete_info().selected == -1 ? '<C-y><CR>' : '<C-y>') : '<CR>'
 inoremap <silent> <expr><CR>        pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
