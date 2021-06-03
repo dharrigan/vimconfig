@@ -57,6 +57,11 @@ augroup numbertoggle_aug
   autocmd BufLeave,FocusLost,InsertEnter *      set norelativenumber
 augroup END
 
+augroup autopairs_aug
+  " disable auto-pairs for lisp -- it interferes with parinfer
+  autocmd Filetype lisp,scheme,clojure,lfe let b:AutoPairs = {}
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Asciidoc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
