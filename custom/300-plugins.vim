@@ -41,13 +41,14 @@ call plug#begin('~/.vim/bundle')
     Plug 'vim-scripts/gitignore'
     Plug 'xuyuanp/nerdtree-git-plugin'
     Plug 'yggdroot/indentline'
+    Plug 'Olical/aniseed', {'tag': 'v3.19.0'}
 
-    Plug 'Olical/conjure', { 'branch': 'develop', 'for': 'clojure' }
-    Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
-    Plug 'guns/vim-clojure-highlight', {'for': 'clojure'}
-    Plug 'clojure-vim/clojure.vim', {'for': 'clojure'}
-    Plug 'guns/vim-sexp', {'for': 'clojure'}
-    Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
+    Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
+    Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': ['clojure', 'fennel']}
+    Plug 'guns/vim-clojure-highlight', {'for': ['clojure', 'fennel']}
+    Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']}
+    Plug 'guns/vim-sexp', {'for': ['clojure', 'fennel']}
+    Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': ['clojure', 'fennel']}
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

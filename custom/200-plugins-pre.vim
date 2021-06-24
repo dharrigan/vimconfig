@@ -64,10 +64,11 @@ let g:sexp_enable_insert_mode_mappings = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 'liuchengxu/vim-clap'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:clap_disable_run_rooter = v:true
+let g:clap_layout = { 'relative': 'editor', 'width': '50%', 'height': '33%', 'row': '33%', 'col': '25%' }
+let g:clap_open_preview = 'never'
 let g:clap_popup_input_delay = 10
 let g:clap_provider_grep_delay = 10
-let g:clap_open_preview = 'never'
-let g:clap_layout = { 'relative': 'editor', 'width': '50%', 'height': '33%', 'row': '33%', 'col': '25%' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => liuchengxu/vista.vim
