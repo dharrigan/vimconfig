@@ -12,7 +12,8 @@ map Q gq
 
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
+" note below, g* not g
+map *  <Plug>(incsearch-nohl-g*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
@@ -68,18 +69,17 @@ nnoremap <silent> <Leader>n         :set number! relativenumber!<CR>
 nnoremap <silent> <Leader>nv        :NV<CR>
 nnoremap <silent> <Leader>p         :Clap providers<CR>
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
+nnoremap <silent> <Leader>`         :QFix<CR>
 
 nnoremap <silent> <Leader>g         :Git<cr>
-nnoremap <silent> <Leader>gb        :Gblame<cr>
-nnoremap <silent> <Leader>gca       :Gcommit --all --verbose<cr>
-nnoremap <silent> <Leader>gcc       :Gcommit --verbose<cr>
-nnoremap <silent> <Leader>gdl       :diffget LOCAL<cr>
-nnoremap <silent> <Leader>gdr       :diffget REMOTE<cr>
-nnoremap <silent> <Leader>gf        :Gfetch<cr>
-nnoremap <silent> <Leader>gi        :Gdiff<cr>
-nnoremap <silent> <Leader>gl        :Gpull<cr>
-nnoremap <silent> <Leader>gp        :Gpush<cr>
-nnoremap <silent> <Leader>gs        :Gstatus<cr>
+nnoremap <silent> <Leader>gb        :Git blame<cr>
+nnoremap <silent> <Leader>gca       :Git commit --all --verbose<cr>
+nnoremap <silent> <Leader>gcc       :Git commit --verbose<cr>
+nnoremap <silent> <Leader>gf        :Git fetch<cr>
+nnoremap <silent> <Leader>gi        :Git diff<cr>
+nnoremap <silent> <Leader>gl        :Git pull<cr>
+nnoremap <silent> <Leader>gp        :Git push<cr>
+nnoremap <silent> <Leader>gs        :Git status<cr>
 
 nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)
@@ -125,9 +125,9 @@ endfunction
 
 nnoremap <silent> <c-space> coc#refresh<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-nnoremap <silent> cram :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'add-missing-libspec', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
-nnoremap <silent> crcn :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'clean-ns', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
-nnoremap <silent> crcp :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'cycle-privacy', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
+nnoremap <silent> cram :call CocAction('runCommand', 'lsp-clojure-add-missing-libspec')<CR>
+nnoremap <silent> crcn :call CocAction('runCommand', 'lsp-clojure-clean-ns')<CR>
+nnoremap <silent> crcp :call CocAction('runCommand', 'lsp-clojure-cycle-privacy')<CR>
 
 command! W w !sudo tee % > /dev/null
 command! PU PlugClean! | PlugUpdate | PlugUpgrade

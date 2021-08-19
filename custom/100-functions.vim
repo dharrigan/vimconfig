@@ -40,7 +40,7 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! LoadClojureContent(uri)
     setfiletype clojure
-    let content = CocRequest('clojure-lsp', 'clojure/dependencyContents', {'uri': a:uri})
+    let content = CocRequest('clojure', 'clojure/dependencyContents', {'uri': a:uri})
     call setline(1, split(content, "\n"))
     setl nomodified readonly
 endfunction
@@ -80,6 +80,20 @@ function! OpenCommitMessageDiff()
 
   " Get back to the commit message
   wincmd p
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => QuickFixToggle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+    unlet g:qfix_win
+  else
+    copen 10
+    let g:qfix_win = bufnr("$")
+  endif
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

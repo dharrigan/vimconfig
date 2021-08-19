@@ -3,6 +3,7 @@
 "
 call plug#begin('~/.vim/bundle')
 
+    Plug 'Olical/aniseed'
     Plug 'airblade/vim-gitgutter'
     Plug 'alok/notational-fzf-vim'
     Plug 'chaoren/vim-wordmotion'
@@ -14,7 +15,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'flazz/vim-colorschemes'
     Plug 'haya14busa/incsearch.vim'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
     Plug 'junegunn/fzf.vim'
     Plug 'kshenoy/vim-signature'
     Plug 'liuchengxu/vim-clap', {'do': 'cargo build --release'}
@@ -41,7 +42,6 @@ call plug#begin('~/.vim/bundle')
     Plug 'vim-scripts/gitignore'
     Plug 'xuyuanp/nerdtree-git-plugin'
     Plug 'yggdroot/indentline'
-    Plug 'Olical/aniseed', {'tag': 'v3.19.0'}
 
     Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
     Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': ['clojure', 'fennel']}
@@ -50,7 +50,11 @@ call plug#begin('~/.vim/bundle')
     Plug 'guns/vim-sexp', {'for': ['clojure', 'fennel']}
     Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': ['clojure', 'fennel']}
 
+
+    Plug 'NoahTheDuke/coc-clojure'
+    Plug 'jlesquembre/coc-conjure'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
 call plug#end()
 

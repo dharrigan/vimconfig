@@ -65,10 +65,12 @@ let g:sexp_enable_insert_mode_mappings = 0
 " => 'liuchengxu/vim-clap'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:clap_disable_run_rooter = v:true
-let g:clap_layout = { 'relative': 'editor', 'width': '50%', 'height': '33%', 'row': '33%', 'col': '25%' }
+"let g:clap_layout = { 'relative': 'editor', 'width': '75%', 'height': '33%', 'row': '33%', 'col': '25%' }
+let g:clap_layout = { 'width': '67%', 'height': '33%', 'row': '33%', 'col': '17%' }
 let g:clap_open_preview = 'never'
 let g:clap_popup_input_delay = 10
 let g:clap_provider_grep_delay = 10
+let g:clap_provider_grep_opts = '-H --no-heading --vimgrep --smart-case --hidden -g "!.git/"'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => liuchengxu/vista.vim
@@ -97,7 +99,23 @@ let g:ackprg = 'rg --vimgrep'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-conjure']
+"
+" These come in from Plug installs now, to ensure we always get the latest from github.
+"
+" let g:coc_global_extensions = ['coc-conjure', 'coc-clojure']
+"
+
+
+"
+" Semantic highlighting is disabled by default!
+"
+" https://github.com/neoclide/coc.nvim/commit/76f407d45640aeadc97a555eac0939217d0dd662
+"
+" as it's being reworked and the current version interfers with treesitter (if installed)
+"
+" However, for me, in the meantime, let's switch it back on again!
+"
+let g:coc_default_semantic_highlight_groups = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ncm2/float-preview
