@@ -56,6 +56,7 @@ nnoremap <silent> <leader> :WhichKey ','<CR>
 nnoremap <silent> <Leader><Leader>  :source $MYVIMRC<CR>
 
 "nnoremap <silent> <Leader>t        :Clap tags<CR>
+nnoremap <silent> <Leader><Leader>  <c-^>
 nnoremap <silent> <Leader>Q         :qa!<CR>
 nnoremap <silent> <Leader>a         :Clap grep<CR>
 nnoremap <silent> <Leader>b         :Clap buffers<CR>
@@ -84,7 +85,9 @@ nnoremap <silent> <Leader>gs        :Git status<cr>
 nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>c             <Plug>(coc-codeaction-cursor)
+nmap <silent> <Leader>ci            :call CocAction('showIncomingCalls')<CR>
 nmap <silent> <Leader>cl            <Plug>(coc-codeaction-line)
+nmap <silent> <Leader>co            :call CocAction('showOutgoingCalls')<CR>
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
 nmap <silent> <Leader>cs            <Plug>(coc-references)
 nmap <silent> gd                    <Plug>(coc-definition)

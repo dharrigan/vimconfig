@@ -138,7 +138,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup markdown_aug
   autocmd!
-  autocmd BufNewFile,BufRead *.md               setlocal spell foldlevel=999 tw=128 ft=text
+  autocmd BufNewFile,BufRead *.md               setlocal spell foldlevel=999 tw=128
   autocmd BufNewFile,BufRead *.md               call lexical#init()
 augroup END
 
