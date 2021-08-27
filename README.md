@@ -21,4 +21,7 @@ The configuration is split into the following sections:
 Feel free to choose what you like, reject what you don't like and I
 hope you gain some benefit from this small repo.
 
+As an added bonus, I've included my `coc-settings.json` that I use to
+interface with CoC. This file lives in `$HOME/.config/nvim`
+
 -=david=-
