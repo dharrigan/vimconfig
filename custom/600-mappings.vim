@@ -45,6 +45,9 @@ nmap <F2> :Vista!!<CR>
 
 nmap t :A<cr>
 
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+
 " Like J (which appends next line to current line),
 " but works the other way (appends current line to previous line)
 noremap <Space>j kJ
@@ -53,7 +56,7 @@ let mapleader=","
 let maplocalleader=","
 nnoremap <silent> <leader> :WhichKey ','<CR>
 
-nnoremap <silent> <Leader><Leader>  :source $MYVIMRC<CR>
+nnoremap <silent> <Leader>r         :source $MYVIMRC<CR>
 
 "nnoremap <silent> <Leader>t        :Clap tags<CR>
 nnoremap <silent> <Leader><Leader>  <c-^>
@@ -72,15 +75,7 @@ nnoremap <silent> <Leader>p         :Clap providers<CR>
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 nnoremap <silent> <Leader>`         :QFix<CR>
 
-nnoremap <silent> <Leader>g         :Git<cr>
 nnoremap <silent> <Leader>gb        :Git blame<cr>
-nnoremap <silent> <Leader>gca       :Git commit --all --verbose<cr>
-nnoremap <silent> <Leader>gcc       :Git commit --verbose<cr>
-nnoremap <silent> <Leader>gf        :Git fetch<cr>
-nnoremap <silent> <Leader>gi        :Git diff<cr>
-nnoremap <silent> <Leader>gl        :Git pull<cr>
-nnoremap <silent> <Leader>gp        :Git push<cr>
-nnoremap <silent> <Leader>gs        :Git status<cr>
 
 nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)

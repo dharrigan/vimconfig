@@ -22,7 +22,7 @@ augroup generic_aug
   autocmd FocusGained,BufEnter *      :checktime
   autocmd WinEnter    jar:file://*    ParinferOff
   autocmd BufEnter    jar:file://*    ParinferOff
-  autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<amatch>"))
+  autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<afile>"))
   autocmd BufLeave    jar:file://*    ParinferOn
   autocmd WinLeave    jar:file://*    ParinferOn
   autocmd BufWinEnter *               silent! :%foldopen!

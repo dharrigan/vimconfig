@@ -52,7 +52,7 @@ let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH']
 let g:clojure_maxlines = 0
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
@@ -68,8 +68,8 @@ let g:clap_disable_run_rooter = v:true
 "let g:clap_layout = { 'relative': 'editor', 'width': '75%', 'height': '33%', 'row': '33%', 'col': '25%' }
 let g:clap_layout = { 'width': '67%', 'height': '33%', 'row': '33%', 'col': '17%' }
 let g:clap_open_preview = 'never'
-let g:clap_popup_input_delay = 10
-let g:clap_provider_grep_delay = 10
+let g:clap_popup_input_delay = 5
+let g:clap_provider_grep_delay = 5
 let g:clap_provider_grep_opts = '-H --no-heading --vimgrep --smart-case --hidden -g "!.git/"'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,6 +143,8 @@ let g:conjure#client#clojure#nrepl#connection#auto_repl#hidden = v:true
 let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#highlight#enabled = 1
 let g:conjure#highlight#timeout = 250
+let g:conjure#client#clojure#nrepl#connection#auto_repl#enabled = v:false
+let g:conjure#client#clojure#nrepl#connection#auto_repl#hidden = v:true
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => preservim/nerdtree

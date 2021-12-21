@@ -86,7 +86,7 @@ set ttimeoutlen=100
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 set undodir=$HOME/.vim/undos
 set undofile
-set updatetime=300
+set updatetime=100
 set viewoptions=cursor,folds,options,slash,unix
 set viminfo='100,f1,<500,/100,:100,%
 set visualbell

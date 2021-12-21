@@ -28,14 +28,6 @@ function! AutoSaveWinView()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Expand (used for Coc - see filetypes)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! Expand(exp) abort
-    let l:result = expand(a:exp)
-    return l:result ==# '' ? '' : "file://" . l:result
-endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Load Clojure Content
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! LoadClojureContent(uri)
