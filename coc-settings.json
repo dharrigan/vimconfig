@@ -14,6 +14,8 @@
   "coc.source.buffer.firstMatch": false,
   "coc.source.conjure.priority": 999999,
   "codeLens.enable": true,
+  "codeLens.position": "eol",
+  "semanticTokens.filetypes": ["*"],
   "suggest.enablePreview": true,
   "suggest.maxCompleteItemCount": 15,
   "suggest.removeDuplicateItems": true,

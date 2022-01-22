@@ -28,6 +28,7 @@ set foldnestmax=10
 set formatoptions=tcqrn2j
 set go+=a
 set grepprg=rg\ --vimgrep
+set guifont=JetBrains\ Mono\ Regular:h13
 set hidden
 set history=100
 set hlsearch

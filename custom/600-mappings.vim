@@ -21,6 +21,9 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" For gui applications
+inoremap <S-Insert> <C-R>+
+
 " Remap VIM 0 to first non-blank character
 nmap 0 ^
 

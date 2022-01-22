@@ -2,6 +2,13 @@
 " Pre Load Plugins Config
 "
 
+"
+" Not a plugin, but controls how neovide displays stuff.
+"
+let g:neovide_floating_opacity = 0.9
+let g:neovide_floating_blur = 0.0
+let g:neovide_cursor_vfx_mode = "railgun"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => airblade/vim-gitgutter
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -133,7 +140,7 @@ let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'help']
 " => olical/conjure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:conjure#log#botright = 1
-let g:conjure#log#hud#height = 1.0
+let g:conjure#log#hud#height = 0.95
 let g:conjure#eval#comment_prefix = ";; "
 let g:conjure#mapping#def_word = v:false
 let g:conjure#mapping#doc_word = v:false
