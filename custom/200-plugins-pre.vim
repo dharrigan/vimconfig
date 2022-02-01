@@ -95,6 +95,8 @@ let g:rainbow_conf = {'separately': {'html': 0}} " disable for html
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => machakann/vim-highlightyank
+" I know that neovim has this built in, but this plugin works better! It's able
+" to highlight words (and boundaries) in a far more visible fashion.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:highlightedyank_highlight_duration = 250
 
