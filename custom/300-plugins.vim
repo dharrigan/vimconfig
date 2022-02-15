@@ -52,7 +52,7 @@ call plug#begin('~/.vim/bundle')
 
 
     Plug 'NoahTheDuke/coc-clojure'
-    Plug 'jlesquembre/coc-conjure'
+    "Plug 'jlesquembre/coc-conjure'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
