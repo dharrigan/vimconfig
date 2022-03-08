@@ -12,7 +12,6 @@
   "coc.preferences.useQuickfixForLocations": false,
   "coc.source.around.firstMatch": false,
   "coc.source.buffer.firstMatch": false,
-  "coc.source.conjure.priority": 999999,
   "codeLens.enable": true,
   "codeLens.position": "eol",
   "semanticTokens.filetypes": ["*"],

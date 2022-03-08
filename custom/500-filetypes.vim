@@ -25,9 +25,9 @@ augroup generic_aug
   autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<afile>"))
   autocmd BufLeave    jar:file://*    ParinferOn
   autocmd WinLeave    jar:file://*    ParinferOn
+  autocmd CursorHold *                silent call CocActionAsync('highlight')
   autocmd BufWinEnter *               silent! :%foldopen!
   autocmd BufWinLeave *               call clearmatches()
-  autocmd CursorHold *                silent call CocActionAsync('highlight')
   autocmd InsertLeave,CompleteDone *  if pumvisible() == 0 | silent! pclose | endif
 augroup END
 

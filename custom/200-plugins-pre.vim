@@ -53,15 +53,13 @@ let g:parinfer_force_balance=1
 let g:incsearch#auto_nohlsearch = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => guns/clojure-static
+" => clojure-vim/clojure-vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH']
 let g:clojure_maxlines = 0
-let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => guns/vim-sexp
@@ -108,22 +106,6 @@ let g:ackprg = 'rg --vimgrep'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" These come in from Plug installs now, to ensure we always get the latest from github.
-"
-" let g:coc_global_extensions = ['coc-conjure', 'coc-clojure']
-"
-
-
-"
-" Semantic highlighting is disabled by default!
-"
-" https://github.com/neoclide/coc.nvim/commit/76f407d45640aeadc97a555eac0939217d0dd662
-"
-" as it's being reworked and the current version interfers with treesitter (if installed)
-"
-" However, for me, in the meantime, let's switch it back on again!
-"
 let g:coc_default_semantic_highlight_groups = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,7 +140,7 @@ let g:conjure#client#clojure#nrepl#connection#auto_repl#hidden = v:true
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => preservim/nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeIgnore = ['node_modules', 'tmp', 'classes', 'target']
+let g:NERDTreeIgnore = ['node_modules', 'tmp', 'classes', 'target', '.cpcache']
 let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeWinSize=60
@@ -178,11 +160,6 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " => sheerun/vim-polyglot
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:polyglot_disabled = ['markdown']
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => shougo/deoplete
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" not enabled as 'deoplete' is not defined.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline/vim-airline

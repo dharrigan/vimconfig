@@ -10,9 +10,7 @@ highlight pmenu ctermfg=white ctermbg=black
 highlight pmenusel ctermfg=white ctermbg=blue
 highlight Normal ctermbg=black
 
-" Setting the colourscheme must come after setting
-" the highlights, to allow for highlighting to work
-" correctly.
+" Setting the colourscheme must come after setting the highlights, to allow for highlighting to work correctly.
 
 colorscheme palenight
 

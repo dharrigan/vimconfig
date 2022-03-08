@@ -43,18 +43,15 @@ call plug#begin('~/.vim/bundle')
     Plug 'xuyuanp/nerdtree-git-plugin'
     Plug 'yggdroot/indentline'
 
-    Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
-    Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': ['clojure', 'fennel']}
-    Plug 'guns/vim-clojure-highlight', {'for': ['clojure', 'fennel']}
-    Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']}
-    Plug 'guns/vim-sexp', {'for': ['clojure', 'fennel']}
-    Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': ['clojure', 'fennel']}
-
-
     Plug 'NoahTheDuke/coc-clojure'
-    "Plug 'jlesquembre/coc-conjure'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
     Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+    Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']}
+    Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': ['clojure', 'fennel']}
+    Plug 'guns/vim-sexp', {'for': ['clojure', 'fennel']}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': ['clojure', 'fennel']}
+    Plug 'guns/vim-clojure-highlight', {'for': ['clojure', 'fennel']}
 
 call plug#end()
 

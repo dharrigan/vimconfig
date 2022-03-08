@@ -84,6 +84,7 @@ nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>c             <Plug>(coc-codeaction-cursor)
 nmap <silent> <Leader>ci            :call CocAction('showIncomingCalls')<CR>
+nmap <silent> <Leader>cI            :call CocAction('jumpImplementation')<CR>
 nmap <silent> <Leader>cl            <Plug>(coc-codeaction-line)
 nmap <silent> <Leader>co            :call CocAction('showOutgoingCalls')<CR>
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
