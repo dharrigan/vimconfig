@@ -34,7 +34,6 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 'always'
-"let g:ale_linters = {'clojure': ['clj-kondo']}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => drewtempelmeyer/palenight.vim
@@ -149,6 +148,11 @@ let g:NERDTreeWinSize=60
 " => reedes/vim-lexical
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lexical#dictionary_key = '<leader>k'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => RRethy/vim-illuminate
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:Illuminate_ftblacklist = ['nerdtree']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ryanoasis/vim-devicons

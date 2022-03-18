@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/bundle')
 
     Plug 'Olical/aniseed'
+    Plug 'RRethy/vim-illuminate'
     Plug 'airblade/vim-gitgutter'
     Plug 'alok/notational-fzf-vim'
     Plug 'chaoren/vim-wordmotion'
@@ -28,6 +29,8 @@ call plug#begin('~/.vim/bundle')
     Plug 'micarmst/vim-spellsync'
     Plug 'mileszs/ack.vim'
     Plug 'ntpeters/vim-better-whitespace'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
     Plug 'preservim/nerdtree'
     Plug 'reedes/vim-lexical'
     Plug 'ryanoasis/vim-devicons'
@@ -43,7 +46,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'xuyuanp/nerdtree-git-plugin'
     Plug 'yggdroot/indentline'
 
-    Plug 'NoahTheDuke/coc-clojure'
+    Plug 'NoahTheDuke/coc-clojure', {'for': ['clojure']}
     Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
     Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
     Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']}

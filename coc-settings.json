@@ -1,9 +1,7 @@
 {
   "callHierarchy.splitCommand": "bel 10sp",
-  "clojure.initialization-options.dependency-scheme": "jar",
   "clojure.initialization-options.ignore-classpath-directories": true,
   "clojure.initialization-options.semantic-tokens?": true,
-  "clojure.initialization-options.text-document-sync-kind": ":full",
   "clojure.initialization-options.use-metadata-for-privacy?": true,
   "clojure.startup-message": true,
   "clojure.trace.server": "verbose",

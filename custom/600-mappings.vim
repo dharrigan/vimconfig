@@ -64,21 +64,45 @@ nnoremap <silent> <Leader>r         :source $MYVIMRC<CR>
 "nnoremap <silent> <Leader>t        :Clap tags<CR>
 nnoremap <silent> <Leader><Leader>  <c-^>
 nnoremap <silent> <Leader>Q         :qa!<CR>
-nnoremap <silent> <Leader>a         :Clap grep<CR>
-nnoremap <silent> <Leader>b         :Clap buffers<CR>
+"nnoremap <silent> <Leader>a         :Clap grep<CR>
+nnoremap <silent> <Leader>a         <cmd>Telescope live_grep<cr>
+"nnoremap <silent> <Leader>b         :Clap buffers<CR>
+nnoremap <silent> <Leader>b         <cmd>Telescope buffers<cr>
 nnoremap <silent> <Leader>bo        :BufOnly<cr>
 nnoremap <silent> <Leader>cu        :ConjureConnect<CR>
 nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle<CR>
-nnoremap <silent> <Leader>f         :Clap files --hidden<CR>
+"nnoremap <silent> <Leader>f         :Clap files --hidden +ignorecase<CR>
+nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
 nnoremap <silent> <Leader>in        :IndentLinesToggle<CR>
-nnoremap <silent> <Leader>m         :Clap marks<CR>
+"nnoremap <silent> <Leader>m         :Clap marks<CR>
 nnoremap <silent> <Leader>n         :set number! relativenumber!<CR>
 nnoremap <silent> <Leader>nv        :NV<CR>
-nnoremap <silent> <Leader>p         :Clap providers<CR>
+"nnoremap <silent> <Leader>p         :Clap providers<CR>
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 nnoremap <silent> <Leader>`         :QFix<CR>
 
 nnoremap <silent> <Leader>gb        :Git blame<cr>
+
+lua << EOF
+local actions = require("telescope.actions")
+require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-u>"] = false
+        }
+      },
+    pickers = {
+      find_files = {
+        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+        }
+      }
+    }
+  }
+EOF
 
 nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)

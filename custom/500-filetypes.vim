@@ -6,7 +6,7 @@
 " => Applicable To All
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup return_to_last_edit_position_aug
+augroup return_to_last_edit_position_augroup
   autocmd!
   autocmd BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -14,7 +14,13 @@ augroup return_to_last_edit_position_aug
         \ endif
 augroup END
 
-augroup generic_aug
+augroup illuminate_augroup
+    autocmd!
+    autocmd VimEnter * hi illuminatedWord cterm=underline gui=underline guisp=#cdcdcd guibg=NONE
+    autocmd VimEnter * hi illuminatedCurWord cterm=underline gui=underline guisp=#767676 guibg=NONE
+augroup END
+
+augroup generic_augroup
   autocmd!
   autocmd BufEnter *                  call AutoRestoreWinView()
   autocmd BufLeave *                  call AutoSaveWinView()
@@ -25,13 +31,13 @@ augroup generic_aug
   autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<afile>"))
   autocmd BufLeave    jar:file://*    ParinferOn
   autocmd WinLeave    jar:file://*    ParinferOn
-  autocmd CursorHold *                silent call CocActionAsync('highlight')
+"  autocmd CursorHold *                silent call CocActionAsync('highlight')
   autocmd BufWinEnter *               silent! :%foldopen!
   autocmd BufWinLeave *               call clearmatches()
   autocmd InsertLeave,CompleteDone *  if pumvisible() == 0 | silent! pclose | endif
 augroup END
 
-augroup filetypes_aug
+augroup filetypes_augroup
   autocmd!
   autocmd FileType clap_input         inoremap <silent> <buffer> <Esc> <Esc>:call clap#handler#exit()<CR>
   autocmd FileType fzf                set laststatus=0 noshowmode noruler | au BufLeave <buffer> set laststatus=2 showmode ruler
@@ -46,18 +52,18 @@ augroup filetypes_aug
   autocmd FileType yaml               setlocal sw=2 ts=2 sts=2
 augroup END
 
-augroup user_aug
+augroup user_augroup
   autocmd!
   autocmd User CocJumpPlaceholder     call CocActionAsync('showSignatureHelp')
 augroup END
 
-augroup numbertoggle_aug
+augroup numbertoggle_augroup
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave *    set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter *      set norelativenumber
 augroup END
 
-augroup autopairs_aug
+augroup autopairs_augroup
   " disable auto-pairs for lisp -- it interferes with parinfer
   autocmd Filetype lisp,scheme,clojure,lfe let b:AutoPairs = {}
 augroup END
@@ -65,7 +71,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Asciidoc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup asciidoc_aug
+augroup asciidoc_augroup
   autocmd!
   autocmd BufEnter *.adoc     setlocal spell foldlevel=999 tw=70
   autocmd BufEnter *.adoc     call lexical#init()
@@ -74,7 +80,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Clojure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup clojure_aug
+augroup clojure_augroup
   autocmd!
   " When editing a Clojure(Script) buffer, make C-] smarter about jumping to
   " tags when the symbol is namespace-qualified.
@@ -85,7 +91,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Crontab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup direnv_aug
+augroup direnv_augroup
   autocmd!
   autocmd BufNewFile,BufRead .envrc             setf direnv
 augroup END
@@ -93,7 +99,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Crontab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup crontab_aug
+augroup crontab_augroup
   autocmd!
   autocmd BufNewFile,BufRead /tmp/crontab*      setf crontab
 augroup END
@@ -101,7 +107,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup git_aug
+augroup git_augroup
   autocmd!
   autocmd BufNewFile,BufRead .git/config        setlocal ft=gitconfig nolist ts=4 sw=4
   autocmd BufNewFile,BufRead .gitconfig*        setlocal ft=gitconfig nolist ts=4 sw=4
@@ -112,7 +118,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup html_aug
+augroup html_augroup
   autocmd!
   autocmd BufNewFile,BufRead *.html             setlocal smartindent
 augroup END
@@ -120,7 +126,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ini
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup ini_aug
+augroup ini_augroup
   autocmd!
   autocmd BufNewFile,BufRead *.ini              setf conf
 augroup END
@@ -128,7 +134,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => JSON
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup json_aug
+augroup json_augroup
   autocmd!
   autocmd BufNewFile,BufRead *.json             set ft=json ts=2 sw=2
 augroup END
@@ -136,7 +142,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup markdown_aug
+augroup markdown_augroup
   autocmd!
   autocmd BufNewFile,BufRead *.md               setlocal spell foldlevel=999 tw=128
   autocmd BufNewFile,BufRead *.md               call lexical#init()
@@ -146,7 +152,7 @@ augroup END
 " => quickfix
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Press q to close quickfix buffer.
-augroup quickfix_aug
+augroup quickfix_augroup
   autocmd!
   autocmd BufReadPost quickfix                  nnoremap <buffer> q :q!<CR>
 augroup END
@@ -154,7 +160,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => XML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup xml_aug
+augroup xml_augroup
   autocmd!
   autocmd BufNewFile,BufRead *.xml              setlocal ft=xml ts=2 sw=2
 augroup END
@@ -162,7 +168,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ZSH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup zsh_aug
+augroup zsh_augroup
   autocmd!
   autocmd BufNewFile,BufRead *.zsh              setf zsh
   autocmd BufNewFile,BufRead .zshlocal          setf zsh
