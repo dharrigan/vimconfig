@@ -3,6 +3,7 @@
 "
 call plug#begin('~/.vim/bundle')
 
+    Plug 'LinArcX/telescope-env.nvim'
     Plug 'Olical/aniseed'
     Plug 'RRethy/vim-illuminate'
     Plug 'airblade/vim-gitgutter'
@@ -31,6 +32,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     Plug 'preservim/nerdtree'
     Plug 'reedes/vim-lexical'
     Plug 'ryanoasis/vim-devicons'

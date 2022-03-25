@@ -31,6 +31,10 @@ augroup generic_augroup
   autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<afile>"))
   autocmd BufLeave    jar:file://*    ParinferOn
   autocmd WinLeave    jar:file://*    ParinferOn
+  autocmd WinEnter    zipfile://*     ParinferOff
+  autocmd BufEnter    zipfile://*     ParinferOff
+  autocmd BufLeave    zipfile://*     ParinferOn
+  autocmd WinLeave    zipfile://*     ParinferOn
 "  autocmd CursorHold *                silent call CocActionAsync('highlight')
   autocmd BufWinEnter *               silent! :%foldopen!
   autocmd BufWinLeave *               call clearmatches()
@@ -84,7 +88,8 @@ augroup clojure_augroup
   autocmd!
   " When editing a Clojure(Script) buffer, make C-] smarter about jumping to
   " tags when the symbol is namespace-qualified.
-  autocmd FileType clojure              nnoremap <buffer> <C-]> :exe ":tag ".SanitizeTag(expand("<cword>"))<cr>
+  "autocmd FileType clojure              nnoremap <buffer> <C-]> :exe ":tag ".SanitizeTag(expand("<cword>"))<cr>
+  autocmd Filetype clojure              set tagfunc=CocTagFunc
   autocmd BufNewFile,BufRead *.edn      setf clojure
 augroup END
 

@@ -17,4 +17,7 @@ colorscheme palenight
 call palenight#set_highlight('CocSem_type', {'fg': palenight#GetColors()['dark_red']})
 call palenight#set_highlight('CocSem_variable', {'fg': palenight#GetColors()['yellow']})
 
+highlight FgCocHintFloatBgCocFloating guifg=lightgray
+
+
 " vim: set syntax=vim:

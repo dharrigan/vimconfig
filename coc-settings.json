@@ -12,6 +12,10 @@
   "coc.source.buffer.firstMatch": false,
   "codeLens.enable": true,
   "codeLens.position": "eol",
+  "diagnostic.floatConfig": {
+    "border": true,
+    "maxWidth": 256
+  },
   "semanticTokens.filetypes": ["*"],
   "suggest.enablePreview": true,
   "suggest.maxCompleteItemCount": 15,

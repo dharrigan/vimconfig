@@ -57,31 +57,26 @@ noremap <Space>j kJ
 
 let mapleader=","
 let maplocalleader=","
-nnoremap <silent> <leader> :WhichKey ','<CR>
+nnoremap <silent> <leader>          :WhichKey ','<CR>
 
 nnoremap <silent> <Leader>r         :source $MYVIMRC<CR>
 
-"nnoremap <silent> <Leader>t        :Clap tags<CR>
 nnoremap <silent> <Leader><Leader>  <c-^>
 nnoremap <silent> <Leader>Q         :qa!<CR>
-"nnoremap <silent> <Leader>a         :Clap grep<CR>
-nnoremap <silent> <Leader>a         <cmd>Telescope live_grep<cr>
-"nnoremap <silent> <Leader>b         :Clap buffers<CR>
-nnoremap <silent> <Leader>b         <cmd>Telescope buffers<cr>
 nnoremap <silent> <Leader>bo        :BufOnly<cr>
 nnoremap <silent> <Leader>cu        :ConjureConnect<CR>
 nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle<CR>
-"nnoremap <silent> <Leader>f         :Clap files --hidden +ignorecase<CR>
-nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
 nnoremap <silent> <Leader>in        :IndentLinesToggle<CR>
-"nnoremap <silent> <Leader>m         :Clap marks<CR>
 nnoremap <silent> <Leader>n         :set number! relativenumber!<CR>
 nnoremap <silent> <Leader>nv        :NV<CR>
-"nnoremap <silent> <Leader>p         :Clap providers<CR>
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 nnoremap <silent> <Leader>`         :QFix<CR>
-
 nnoremap <silent> <Leader>gb        :Git blame<cr>
+
+nnoremap <silent> <Leader>a         <cmd>Telescope live_grep<cr>
+nnoremap <silent> <Leader>b         <cmd>Telescope buffers<cr>
+nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
+nnoremap <silent> <Leader>j         <cmd>Telescope jumplist<cr>
 
 lua << EOF
 local actions = require("telescope.actions")
@@ -104,16 +99,36 @@ require('telescope').setup {
   }
 EOF
 
+function! s:goto_tag(tagkind) abort
+  let tagname = expand('<cWORD>')
+  let winnr = winnr()
+  let pos = getcurpos()
+  let pos[0] = bufnr()
+
+  if CocAction('jump' . a:tagkind)
+    call settagstack(winnr, {
+      \ 'curidx': gettagstack()['curidx'],
+      \ 'items': [{'tagname': tagname, 'from': pos}]
+      \ }, 't')
+  endif
+endfunction
+
 nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>c             <Plug>(coc-codeaction-cursor)
 nmap <silent> <Leader>ci            :call CocAction('showIncomingCalls')<CR>
-nmap <silent> <Leader>cI            :call CocAction('jumpImplementation')<CR>
 nmap <silent> <Leader>cl            <Plug>(coc-codeaction-line)
 nmap <silent> <Leader>co            :call CocAction('showOutgoingCalls')<CR>
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
-nmap <silent> <Leader>cs            <Plug>(coc-references)
-nmap <silent> gd                    <Plug>(coc-definition)
+
+"nmap <silent> <Leader>cI            <Plug>(coc-implementation)<CR>
+"nmap <silent> <Leader>cs            <Plug>(coc-references)
+"nmap <silent> gd                    <Plug>(coc-definition)
+
+" https://github.com/neoclide/coc.nvim/issues/1054
+nmap <silent> <Leader>gI            :call <SID>goto_tag("Implementation")<CR>
+nmap <silent> <Leader>gs            :call <SID>goto_tag("References")<CR>
+nmap <silent> gd                    :call <SID>goto_tag("Definition")<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Check Backspace - has to be SCRIPT LOCAL (aka SID)
@@ -125,11 +140,12 @@ endfunction
 
 inoremap <silent> <expr><TAB>       pumvisible() ? "\<C-n>" : <SID>checkBackspace() ? "\<TAB>" : coc#refresh()
 inoremap <silent> <expr><C-J>       pumvisible() ? "\<C-n>" : <SID>checkBackspace() ? "\<C-J>" : coc#refresh()
+inoremap <silent><expr> <c-space>   coc#refresh()
+inoremap <expr> <cr>                pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <silent> <expr><CR>        pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 inoremap <silent> <expr><C-K>       pumvisible() ? "\<C-p>" : "\<C-K>"
 inoremap <silent> <expr><S-TAB>     pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <silent> <expr><CR>        pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 
 nmap <S-Right> <Plug>(sexp_capture_next_element)<Plug>(sexp_indent)
 nmap <S-Left> <Plug>(sexp_emit_tail_element)<Plug>(sexp_indent)
