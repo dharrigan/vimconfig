@@ -17,11 +17,16 @@ The configuration is split into the following sections:
 * `500`. Filemappings (basically a set of autocommands)
 * `600`. Mappings, such as leaders, keystrokes and so on...
 * `700`. Colours
+* `800`. Lua
 
 Feel free to choose what you like, reject what you don't like and I
 hope you gain some benefit from this small repo.
 
 As an added bonus, I've included my `coc-settings.json` that I use to
-interface with CoC. This file lives in `$HOME/.config/nvim`
+interface with CoC. This file lives in `$HOME/.config/nvim` and I've also
+included my personal lua config (it's not much), which lives in
+`$HOME/.config/nvim/lua`.
+
+Enjoy!
 
 -=david=-
