@@ -83,7 +83,7 @@ set tabstop=4
 set tags+=tags;$HOME
 set termguicolors
 set textwidth=256
-set ttimeoutlen=100
+set ttimeoutlen=250
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 set undodir=$HOME/.vim/undos
 set undofile

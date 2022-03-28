@@ -15,6 +15,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'docunext/closetag.vim'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'fannheyward/telescope-coc.nvim'
     Plug 'flazz/vim-colorschemes'
     Plug 'haya14busa/incsearch.vim'
     Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}

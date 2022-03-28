@@ -72,6 +72,7 @@ nnoremap <silent> <Leader>nv        :NV<CR>
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 nnoremap <silent> <Leader>`         :QFix<CR>
 nnoremap <silent> <Leader>gb        :Git blame<cr>
+nnoremap <silent> <Leader>wo        :CocCommand workspace.showOutput clojure<cr>
 
 nnoremap <silent> <Leader>a         <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Leader>b         <cmd>Telescope buffers<cr>
