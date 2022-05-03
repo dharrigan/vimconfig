@@ -6,6 +6,9 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-L> :bn<CR>
 map <C-H> :bp<CR>
+noremap <F7> :cprevious<CR>
+noremap <F8> :cnext<CR>
+noremap <F9> :cclose<CR>
 map <silent> <C-G> :se invhlsearch<CR>
 map Y y$
 map Q gq

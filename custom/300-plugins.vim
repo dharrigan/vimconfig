@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/bundle')
 
     Plug 'LinArcX/telescope-env.nvim'
+    Plug 'NoahTheDuke/vim-just'
     Plug 'Olical/aniseed'
     Plug 'RRethy/vim-illuminate'
     Plug 'airblade/vim-gitgutter'
