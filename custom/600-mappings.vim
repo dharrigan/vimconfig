@@ -68,7 +68,7 @@ nnoremap <silent> <Leader><Leader>  <c-^>
 nnoremap <silent> <Leader>Q         :qa!<CR>
 nnoremap <silent> <Leader>bo        :BufOnly<cr>
 nnoremap <silent> <Leader>cu        :ConjureConnect<CR>
-nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle<CR>
+nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle %<CR>
 nnoremap <silent> <Leader>in        :IndentLinesToggle<CR>
 nnoremap <silent> <Leader>n         :set number! relativenumber!<CR>
 nnoremap <silent> <Leader>nv        :NV<CR>
@@ -81,27 +81,7 @@ nnoremap <silent> <Leader>a         <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Leader>b         <cmd>Telescope buffers<cr>
 nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
 nnoremap <silent> <Leader>j         <cmd>Telescope jumplist<cr>
-
-lua << EOF
-local actions = require("telescope.actions")
-require('telescope').setup {
-  defaults = {
-    mappings = {
-      i = {
-        ["<esc>"] = actions.close,
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-        ["<C-u>"] = false
-        }
-      },
-    pickers = {
-      find_files = {
-        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
-        }
-      }
-    }
-  }
-EOF
+nnoremap <silent> <Leader>e         <cmd>Telescope emoji<cr>
 
 function! s:goto_tag(tagkind) abort
   let tagname = expand('<cWORD>')
@@ -120,9 +100,9 @@ endfunction
 nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
 nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>c             <Plug>(coc-codeaction-cursor)
-nmap <silent> <Leader>ci            :call CocAction('showIncomingCalls')<CR>
+nmap <silent> <Leader>ci            :call CocActionAsync('showIncomingCalls')<CR>
 nmap <silent> <Leader>cl            <Plug>(coc-codeaction-line)
-nmap <silent> <Leader>co            :call CocAction('showOutgoingCalls')<CR>
+nmap <silent> <Leader>co            :call CocActionAsync('showOutgoingCalls')<CR>
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
 
 "nmap <silent> <Leader>cI            <Plug>(coc-implementation)<CR>

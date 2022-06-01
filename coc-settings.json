@@ -7,9 +7,8 @@
   "clojure.trace.server": "verbose",
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.messageLevel": "error",
+  "coc.preferences.renameFillCurrent": false,
   "coc.preferences.useQuickfixForLocations": false,
-  "coc.source.around.firstMatch": false,
-  "coc.source.buffer.firstMatch": false,
   "codeLens.enable": true,
   "codeLens.position": "eol",
   "diagnostic.floatConfig": {

@@ -30,6 +30,7 @@ let g:wordmotion_uppercase_spaces = ['-']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => dense-analysis/ale
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_disable_lsp = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 let g:ale_lint_on_enter = 1
@@ -139,6 +140,7 @@ let g:conjure#client#clojure#nrepl#connection#auto_repl#hidden = v:true
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => preservim/nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeChDirMode = 2
 let g:NERDTreeIgnore = ['node_modules', 'tmp', 'classes', 'target', '.cpcache']
 let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeShowLineNumbers=1

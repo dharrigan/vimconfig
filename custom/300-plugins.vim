@@ -4,7 +4,6 @@
 call plug#begin('~/.vim/bundle')
 
     Plug 'LinArcX/telescope-env.nvim'
-    Plug 'NoahTheDuke/vim-just'
     Plug 'Olical/aniseed'
     Plug 'RRethy/vim-illuminate'
     Plug 'airblade/vim-gitgutter'
@@ -22,6 +21,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
     Plug 'junegunn/fzf.vim'
     Plug 'kshenoy/vim-signature'
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'liuchengxu/vim-clap', {'do': 'cargo build --release'}
     Plug 'liuchengxu/vim-which-key'
     Plug 'liuchengxu/vista.vim'
@@ -33,9 +33,10 @@ call plug#begin('~/.vim/bundle')
     Plug 'mileszs/ack.vim'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    Plug 'nvim-telescope/telescope.nvim'
     Plug 'preservim/nerdtree'
+    Plug 'pwntester/octo.nvim'
     Plug 'reedes/vim-lexical'
     Plug 'ryanoasis/vim-devicons'
     Plug 'schickling/vim-bufonly'
@@ -47,6 +48,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-scripts/gitignore'
+    Plug 'xiyaowong/telescope-emoji'
     Plug 'xuyuanp/nerdtree-git-plugin'
     Plug 'yggdroot/indentline'
 
