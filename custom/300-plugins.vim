@@ -22,7 +22,6 @@ call plug#begin('~/.vim/bundle')
     Plug 'junegunn/fzf.vim'
     Plug 'kshenoy/vim-signature'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'liuchengxu/vim-clap', {'do': 'cargo build --release'}
     Plug 'liuchengxu/vim-which-key'
     Plug 'liuchengxu/vista.vim'
     Plug 'ludovicchabant/vim-gutentags'
@@ -52,7 +51,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'xuyuanp/nerdtree-git-plugin'
     Plug 'yggdroot/indentline'
 
-    Plug 'NoahTheDuke/coc-clojure', {'for': ['clojure']}
+    Plug 'dharrigan/coc-clojure', {'branch': 'fix/remove-activation-events', 'for': ['clojure']}
     Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
     Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
     Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']}

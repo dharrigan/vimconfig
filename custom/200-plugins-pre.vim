@@ -35,6 +35,10 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 'always'
+let g:ale_pattern_options = {
+\   '.*\.yaml$': {'ale_enabled': 0},
+\   '.*\.yml$': {'ale_enabled': 0},
+\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => drewtempelmeyer/palenight.vim
@@ -59,7 +63,7 @@ let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH']
-let g:clojure_maxlines = 0
+let g:clojure_maxlines = 100
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => guns/vim-sexp

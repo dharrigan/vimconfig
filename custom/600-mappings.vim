@@ -68,7 +68,7 @@ nnoremap <silent> <Leader><Leader>  <c-^>
 nnoremap <silent> <Leader>Q         :qa!<CR>
 nnoremap <silent> <Leader>bo        :BufOnly<cr>
 nnoremap <silent> <Leader>cu        :ConjureConnect<CR>
-nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle %<CR>
+nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle<CR>
 nnoremap <silent> <Leader>in        :IndentLinesToggle<CR>
 nnoremap <silent> <Leader>n         :set number! relativenumber!<CR>
 nnoremap <silent> <Leader>nv        :NV<CR>
@@ -122,14 +122,15 @@ function! s:checkBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent> <expr><TAB>       pumvisible() ? "\<C-n>" : <SID>checkBackspace() ? "\<TAB>" : coc#refresh()
-inoremap <silent> <expr><C-J>       pumvisible() ? "\<C-n>" : <SID>checkBackspace() ? "\<C-J>" : coc#refresh()
-inoremap <silent><expr> <c-space>   coc#refresh()
-inoremap <expr> <cr>                pumvisible() ? "\<C-y>" : "\<CR>"
-"inoremap <silent> <expr><CR>        pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent> <expr><TAB>       coc#pum#visible() ? coc#pum#next(1) : <SID>checkBackspace() ? "\<Tab>" : coc#refresh()
+inoremap <silent> <expr><S-TAB>     coc#pum#visible() ? coc#pum#prev(1) : "\<S-TAB>"
 
-inoremap <silent> <expr><C-K>       pumvisible() ? "\<C-p>" : "\<C-K>"
-inoremap <silent> <expr><S-TAB>     pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <silent> <expr><C-J>       coc#pum#visible() ? coc#pum#next(1) : <SID>checkBackspace() ? "\<Tab>" : coc#refresh()
+inoremap <silent> <expr><C-K>       coc#pum#visible() ? coc#pum#prev(1) : "\<C-K>"
+
+inoremap <silent> <expr><c-space>   coc#refresh()
+inoremap <silent> <expr><cr>        coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
 
 nmap <S-Right> <Plug>(sexp_capture_next_element)<Plug>(sexp_indent)
 nmap <S-Left> <Plug>(sexp_emit_tail_element)<Plug>(sexp_indent)
