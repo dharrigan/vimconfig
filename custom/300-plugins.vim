@@ -35,8 +35,8 @@ call plug#begin('~/.vim/bundle')
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'preservim/nerdtree'
+    Plug 'preservim/vim-lexical'
     Plug 'pwntester/octo.nvim'
-    Plug 'reedes/vim-lexical'
     Plug 'ryanoasis/vim-devicons'
     Plug 'schickling/vim-bufonly'
     Plug 'sheerun/vim-polyglot'

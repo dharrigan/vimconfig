@@ -19,5 +19,7 @@ call palenight#set_highlight('CocSem_variable', {'fg': palenight#GetColors()['ye
 
 highlight FgCocHintFloatBgCocFloating guifg=lightgray
 
+highlight CocSearch ctermfg=white guifg=white
+highlight CocMenuSel ctermbg=blue guibg=#3a5567
 
 " vim: set syntax=vim:

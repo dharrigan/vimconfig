@@ -96,7 +96,7 @@ augroup clojure_augroup
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Crontab
+" => Direvn
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup direnv_augroup
   autocmd!
@@ -152,6 +152,8 @@ augroup END
 augroup justfile_augroup
   autocmd!
   autocmd BufNewFile,BufRead .justfile          set ft=just
+  autocmd BufNewFile,BufRead Justfile           set ft=just
+  autocmd BufNewFile,BufRead justfile           set ft=just
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

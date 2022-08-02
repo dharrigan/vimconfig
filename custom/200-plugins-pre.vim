@@ -151,7 +151,7 @@ let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeWinSize=60
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => reedes/vim-lexical
+" => preservim/vim-lexical
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lexical#dictionary_key = '<leader>k'
 
@@ -170,6 +170,11 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " => sheerun/vim-polyglot
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:polyglot_disabled = ['markdown']
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline/vim-airline
@@ -196,5 +201,7 @@ let g:airline_theme='palenight'
 " => yggdroot/indentline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_char_list = ['|']
+let g:markdown_syntax_conceal = 0
+let g:vim_json_conceal = 0
 
 " vim: set syntax=vim:
