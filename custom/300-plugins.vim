@@ -51,15 +51,16 @@ call plug#begin('~/.vim/bundle')
     Plug 'xuyuanp/nerdtree-git-plugin'
     Plug 'yggdroot/indentline'
 
-    Plug 'dharrigan/coc-clojure', {'branch': 'fix/remove-activation-events', 'for': ['clojure']}
     Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
     Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
     Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']}
+    Plug 'dharrigan/coc-clojure', {'branch': 'fix/remove-activation-events', 'for': ['clojure']}
     Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': ['clojure', 'fennel']}
+    Plug 'guns/vim-clojure-highlight', {'for': ['clojure', 'fennel']}
     Plug 'guns/vim-sexp', {'for': ['clojure', 'fennel']}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': ['clojure', 'fennel']}
-    Plug 'guns/vim-clojure-highlight', {'for': ['clojure', 'fennel']}
+    Plug 'walterl/conjure-efroot', {'for': ['clojure']}
 
 call plug#end()
 
