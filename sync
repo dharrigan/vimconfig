@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rsync -vahP $HOME/.vim/custom .
+rsync -vahP $HOME/.config/nvim/lua .
+
+cp $HOME/.config/nvim/init.vim .
+cp $HOME/.config/nvim/coc-settings.json .

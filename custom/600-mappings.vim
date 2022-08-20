@@ -45,10 +45,11 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <F2> :Vista!!<CR>
 
+" Vim Projectionist, edit alternative file.
 nmap t :A<cr>
 
 nmap ]h <Plug>(GitGutterNextHunk)
@@ -69,9 +70,7 @@ nnoremap <silent> <Leader>Q         :qa!<CR>
 nnoremap <silent> <Leader>bo        :BufOnly<cr>
 nnoremap <silent> <Leader>cu        :ConjureConnect<CR>
 nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle<CR>
-nnoremap <silent> <Leader>in        :IndentLinesToggle<CR>
-nnoremap <silent> <Leader>n         :set number! relativenumber!<CR>
-nnoremap <silent> <Leader>nv        :NV<CR>
+nnoremap <silent> <Leader>hp        <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 nnoremap <silent> <Leader>`         :QFix<CR>
 nnoremap <silent> <Leader>gb        :Git blame<cr>
@@ -80,7 +79,6 @@ nnoremap <silent> <Leader>wo        :CocCommand workspace.showOutput clojure<cr>
 nnoremap <silent> <Leader>a         <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Leader>b         <cmd>Telescope buffers<cr>
 nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
-nnoremap <silent> <Leader>j         <cmd>Telescope jumplist<cr>
 nnoremap <silent> <Leader>e         <cmd>Telescope emoji<cr>
 
 function! s:goto_tag(tagkind) abort
@@ -97,13 +95,16 @@ function! s:goto_tag(tagkind) abort
   endif
 endfunction
 
-nmap <silent> <C-J>                 <Plug>(coc-diagnostic-next)
-nmap <silent> <C-K>                 <Plug>(coc-diagnostic-prev)
+nmap <silent> <F3>                  :call RemoveCocCallsWindow()<CR>
+
+nmap <silent> <C-j>                 <Plug>(coc-diagnostic-next)
+nmap <silent> <C-k>                 <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>c             <Plug>(coc-codeaction-cursor)
 nmap <silent> <Leader>ci            :call CocActionAsync('showIncomingCalls')<CR>
 nmap <silent> <Leader>cl            <Plug>(coc-codeaction-line)
 nmap <silent> <Leader>co            :call CocActionAsync('showOutgoingCalls')<CR>
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
+nmap <silent> <Leader>ca            <Plug>(coc-codeaction-selected)
 
 "nmap <silent> <Leader>cI            <Plug>(coc-implementation)<CR>
 "nmap <silent> <Leader>cs            <Plug>(coc-references)
@@ -119,14 +120,14 @@ nmap <silent> gd                    :call <SID>goto_tag("Definition")<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:checkBackspace() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+  return !col || getline('.')[col - 1] =~ '\s'
 endfunction
 
 inoremap <silent> <expr><TAB>       coc#pum#visible() ? coc#pum#next(1) : <SID>checkBackspace() ? "\<Tab>" : coc#refresh()
 inoremap <silent> <expr><S-TAB>     coc#pum#visible() ? coc#pum#prev(1) : "\<S-TAB>"
 
-inoremap <silent> <expr><C-J>       coc#pum#visible() ? coc#pum#next(1) : <SID>checkBackspace() ? "\<Tab>" : coc#refresh()
-inoremap <silent> <expr><C-K>       coc#pum#visible() ? coc#pum#prev(1) : "\<C-K>"
+inoremap <silent> <expr><C-j>       coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+inoremap <silent> <expr><C-k>       coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
 
 inoremap <silent> <expr><c-space>   coc#refresh()
 inoremap <silent> <expr><cr>        coc#pum#visible() ? coc#_select_confirm() : "\<CR>"

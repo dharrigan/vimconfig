@@ -95,4 +95,12 @@ function! SanitizeTag(word) abort
   return (split(a:word, '/')[-1])
 endfunction
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Remove CoC Calls Window (forshowIncomingCalls and showOutgoingCalls)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RemoveCocCallsWindow() abort
+  let l:winid = coc#window#find('cocViewId', 'CALLS')
+  call coc#window#close(l:winid)
+endfunction
+
 " vim: set syntax=vim:

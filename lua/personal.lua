@@ -1,8 +1,22 @@
 
-require('telescope').load_extension('coc')
 require('telescope').load_extension('emoji')
-require('telescope').load_extension('env')
 require('telescope').load_extension('fzf')
+
+require('lualine').setup {
+    options = {
+        theme = 'OceanicNext'
+    },
+    sections = {
+        lualine_c = {
+            {
+                'filename',
+                file_status = true,
+                newfile_status = true,
+                path = 2
+            }
+        }
+    }
+}
 
 require('octo').setup()
 
@@ -33,3 +47,31 @@ require('telescope').setup {
     }
   }
 }
+
+-- require('nvim-treesitter.configs').setup {
+--   ensure_installed = {
+--       "bash",
+--       "clojure",
+--       "dockerfile",
+--       "javascript",
+--       "json",
+--       "lua",
+--       "python",
+--       "rust",
+--       "sql",
+--       "toml",
+--       "typescript",
+--       "yaml"
+--   },
+--   sync_install = false,
+--   auto_install = false,
+--   highlight = {
+--     enable = true,
+--     additional_vim_regex_highlighting = false,
+--     disable = { "json" }
+--   },
+--   rainbow = {
+--     enable = true,
+--     extended_mode = true
+--   }
+-- }

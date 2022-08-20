@@ -79,7 +79,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup asciidoc_augroup
   autocmd!
-  autocmd BufEnter *.adoc     setlocal spell foldlevel=999 tw=70
+  autocmd BufEnter *.adoc     setlocal spell foldlevel=999 tw=128
   autocmd BufEnter *.adoc     call lexical#init()
 augroup END
 
@@ -88,9 +88,6 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup clojure_augroup
   autocmd!
-  " When editing a Clojure(Script) buffer, make C-] smarter about jumping to
-  " tags when the symbol is namespace-qualified.
-  "autocmd FileType clojure              nnoremap <buffer> <C-]> :exe ":tag ".SanitizeTag(expand("<cword>"))<cr>
   autocmd Filetype clojure              set tagfunc=CocTagFunc
   autocmd BufNewFile,BufRead *.edn      setf clojure
 augroup END

@@ -8,9 +8,16 @@
   "clojure.trace.server": "verbose",
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.messageLevel": "error",
+  "coc.preferences.rootPatterns": [
+    "deps.edn",
+    "project.clj",
+    ".git",
+    ".projections.json"
+  ],
   "coc.preferences.useQuickfixForLocations": false,
   "codeLens.enable": true,
   "codeLens.position": "eol",
+  "cSpell.language": "en-GB",
   "diagnostic.floatConfig": {
     "border": true,
     "maxWidth": 256

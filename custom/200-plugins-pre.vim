@@ -15,13 +15,6 @@ let g:neovide_cursor_vfx_mode = "railgun"
 let g:gitgutter_highlight_linenrs = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => alok/notational-fzf-vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:nv_default_extension = ".adoc"
-let g:nv_main_directory = '~/Documents'
-let g:nv_search_paths = ['~/development/notes']
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => chaoren/vim-wordmotion
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:wordmotion_spaces = ['_', '-', '.']
@@ -153,7 +146,9 @@ let g:NERDTreeWinSize=60
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => preservim/vim-lexical
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lexical#dictionary_key = '<leader>k'
+"let g:lexical#dictionary_key = '<leader>k'
+let g:lexical#thesaurus = ['~/Documents/thesaurus/mthesaur.txt']
+let g:lexical#thesaurus_key = '<leader>t'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => RRethy/vim-illuminate
