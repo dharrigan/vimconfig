@@ -37,7 +37,7 @@ augroup generic_augroup
   autocmd BufEnter    zipfile://*     ParinferOff
   autocmd BufLeave    zipfile://*     ParinferOn
   autocmd WinLeave    zipfile://*     ParinferOn
-"  autocmd CursorHold *                silent call CocActionAsync('highlight')
+  autocmd CursorHold  *               silent call CocActionAsync('highlight')
   autocmd BufWinEnter *               silent! :%foldopen!
   autocmd BufWinLeave *               call clearmatches()
   autocmd InsertLeave,CompleteDone *  if pumvisible() == 0 | silent! pclose | endif

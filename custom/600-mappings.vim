@@ -144,18 +144,26 @@ vmap >e <Plug>(sexp_swap_element_forward)
 " => Show Documentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
+  if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
   endif
 endfunction
 
+"function! s:show_documentation()
+"  if &filetype == 'vim'
+"    execute 'h '.expand('<cword>')
+"  else
+"    call CocActionAsync('doHover')
+"  endif
+"endfunction
+
 nnoremap <silent> <c-space> coc#refresh<CR>
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-nnoremap <silent> cram :call CocAction('runCommand', 'lsp-clojure-add-missing-libspec')<CR>
-nnoremap <silent> crcn :call CocAction('runCommand', 'lsp-clojure-clean-ns')<CR>
-nnoremap <silent> crcp :call CocAction('runCommand', 'lsp-clojure-cycle-privacy')<CR>
+nnoremap <silent> K         :call <SID>show_documentation()<CR>
+nnoremap <silent> cram      :call CocAction('runCommand', 'lsp-clojure-add-missing-libspec')<CR>
+nnoremap <silent> crcn      :call CocAction('runCommand', 'lsp-clojure-clean-ns')<CR>
+nnoremap <silent> crcp      :call CocAction('runCommand', 'lsp-clojure-cycle-privacy')<CR>
 
 command! W w !sudo tee % > /dev/null
 command! PU PlugClean! | PlugUpdate | PlugUpgrade
