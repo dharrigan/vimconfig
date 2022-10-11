@@ -90,6 +90,7 @@ augroup clojure_augroup
   autocmd!
   autocmd Filetype clojure              set tagfunc=CocTagFunc
   autocmd BufNewFile,BufRead *.edn      setf clojure
+  autocmd BufEnter conjure-log-*.cljc   setf clojure
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,6 +170,14 @@ augroup END
 augroup quickfix_augroup
   autocmd!
   autocmd BufReadPost quickfix                  nnoremap <buffer> q :q!<CR>
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => terraform
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup terraform_augroup
+  autocmd!
+  autocmd BufNewFile,BufRead *.tf               set tw=80
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

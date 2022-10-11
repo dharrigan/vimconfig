@@ -14,12 +14,12 @@ call plug#begin('~/.vim/bundle')
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'flazz/vim-colorschemes'
+    Plug 'folke/which-key.nvim'
     Plug 'haya14busa/incsearch.vim'
     Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
     Plug 'junegunn/fzf.vim'
     Plug 'kshenoy/vim-signature'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'liuchengxu/vim-which-key'
     Plug 'liuchengxu/vista.vim'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'luochen1990/rainbow'
@@ -61,7 +61,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'guns/vim-sexp', {'for': ['clojure', 'fennel']}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': ['clojure', 'fennel']}
-    Plug 'walterl/conjure-efroot', {'for': ['clojure']}
+    "Plug 'walterl/conjure-efroot', {'for': ['clojure']}
 
 call plug#end()
 

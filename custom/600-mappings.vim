@@ -61,7 +61,6 @@ noremap <Space>j kJ
 
 let mapleader=","
 let maplocalleader=","
-nnoremap <silent> <leader>          :WhichKey ','<CR>
 
 nnoremap <silent> <Leader>r         :source $MYVIMRC<CR>
 
