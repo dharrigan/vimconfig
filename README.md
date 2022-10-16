@@ -30,6 +30,8 @@ included my personal lua config (it's not much), which lives in
 My `vimrc` is there too, it's pretty simple, just loads in all the custom vim
 files.
 
+If you wish to install the plugins (via vim-plug), you can use `:PU`
+
 Enjoy!
 
 -=david=-
