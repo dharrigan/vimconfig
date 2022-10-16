@@ -27,6 +27,9 @@ interface with CoC. This file lives in `$HOME/.config/nvim` and I've also
 included my personal lua config (it's not much), which lives in
 `$HOME/.config/nvim/lua`.
 
+My `vimrc` is there too, it's pretty simple, just loads in all the custom vim
+files.
+
 Enjoy!
 
 -=david=-
