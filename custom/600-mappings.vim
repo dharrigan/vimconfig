@@ -66,7 +66,6 @@ nnoremap <silent> <Leader>r         :source $MYVIMRC<CR>
 
 nnoremap <silent> <Leader><Leader>  <c-^>
 nnoremap <silent> <Leader>Q         :qa!<CR>
-nnoremap <silent> <Leader>bo        :BufOnly<cr>
 nnoremap <silent> <Leader>cu        :ConjureConnect<CR>
 nnoremap <silent> <Leader>d         :ProjectRootExe NERDTreeToggle<CR>
 nnoremap <silent> <Leader>hp        <Plug>(GitGutterPreviewHunk)
@@ -175,5 +174,9 @@ command! -bang -nargs=* Rg
 \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
 \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
 \   <bang>0)
+
+" Insert UUIDs via ctrl+u
+"inoremap <c-u> <c-r>=trim(system('uuidgen'))<cr>
+"nnoremap <c-u> i<c-r>=trim(system('uuidgen'))<cr><esc>
 
 " vim: set syntax=vim:

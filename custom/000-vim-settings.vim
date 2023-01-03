@@ -5,6 +5,7 @@
 syntax on
 filetype indent plugin on
 
+"set splitright
 set autoindent
 set autoread
 set autowrite
@@ -61,6 +62,7 @@ set relativenumber
 set rtp+=~/.fzf
 set rtp+=~/.fzf/bin
 set ruler
+set shada=!,'100,<50,s10,h
 set shiftround
 set shiftwidth=4
 set shortmess+=cA
@@ -76,15 +78,15 @@ set smarttab
 set softtabstop=4
 set spelllang=en_gb
 set splitbelow
-"set splitright
 set startofline
 set statusline=%<%F%h%m%r%=%{&ff}\ %l,%c%V\ %P\ %#warningmsg#\ %*
 set tabstop=4
 set tags+=tags;$HOME
 set termguicolors
-set textwidth=256
+set textwidth=78
+set title
+set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
 set ttimeoutlen=250
-set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 set undodir=$HOME/.vim/undos
 set undofile
 set updatetime=100

@@ -13,12 +13,19 @@ require('lualine').setup {
         theme = 'OceanicNext'
     },
     sections = {
+        lualine_a = {
+          {
+            'buffers',
+            show_filename_only = true,
+            mode = 2
+          }
+        },
         lualine_c = {
             {
                 'filename',
                 file_status = true,
                 newfile_status = true,
-                path = 2
+                path = 1
             }
         }
     }

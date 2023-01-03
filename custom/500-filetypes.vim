@@ -27,7 +27,7 @@ augroup generic_augroup
   autocmd BufEnter *                  call AutoRestoreWinView()
   autocmd BufLeave *                  call AutoSaveWinView()
   autocmd BufRead *                   silent! set fileformat=unix
-  autocmd FocusGained,BufEnter *      :checktime
+  autocmd FocusGained,BufEnter *      if mode() != 'c' | checktime | endif
   autocmd WinEnter    jar:file://*    ParinferOff
   autocmd BufEnter    jar:file://*    ParinferOff
   autocmd BufReadCmd  jar:file://*    call LoadClojureContent(expand("<afile>"))
@@ -50,10 +50,10 @@ augroup filetypes_augroup
   autocmd FileType go                 setlocal sw=4 ts=4 sts=4 noexpandtab
   autocmd FileType json               setlocal conceallevel=0 foldmethod=syntax foldlevel=999
   autocmd FileType mail               call lexical#init()
-  autocmd FileType mail               setlocal comments=nb:> tw=70 spell
+  autocmd FileType mail               setlocal comments=nb:> tw=78 spell
   autocmd FileType make               setlocal nolist noexpandtab sw=4 ts=4 sts=4
   autocmd FileType sql                setlocal formatprg=pg_format\ -f2\ -u2\ -
-  autocmd FileType text               setlocal tw=70 spell
+  autocmd FileType text               setlocal tw=78 spell
   autocmd FileType text               call lexical#init()
   autocmd FileType yaml               setlocal sw=2 ts=2 sts=2
 augroup END
@@ -79,7 +79,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup asciidoc_augroup
   autocmd!
-  autocmd BufEnter *.adoc     setlocal spell foldlevel=999 tw=128
+  autocmd BufEnter *.adoc     setlocal spell foldlevel=999 tw=78
   autocmd BufEnter *.adoc     call lexical#init()
 augroup END
 
@@ -159,7 +159,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup markdown_augroup
   autocmd!
-  autocmd BufNewFile,BufRead *.md               setlocal spell foldlevel=999 tw=128
+  autocmd BufNewFile,BufRead *.md               setlocal spell foldlevel=999 tw=78
   autocmd BufNewFile,BufRead *.md               call lexical#init()
 augroup END
 
@@ -173,11 +173,19 @@ augroup quickfix_augroup
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => templates
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup template_augroup
+  autocmd!
+  autocmd BufNewFile,BufRead *.template         set ft=text nospell tw=78
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => terraform
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup terraform_augroup
   autocmd!
-  autocmd BufNewFile,BufRead *.tf               set tw=80
+  autocmd BufNewFile,BufRead *.tf               set tw=78
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

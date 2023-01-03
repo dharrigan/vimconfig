@@ -38,7 +38,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'pwntester/octo.nvim'
     Plug 'schickling/vim-bufonly'
     Plug 'sheerun/vim-polyglot'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-repeat'
@@ -50,7 +50,7 @@ call plug#begin('~/.vim/bundle')
     " Clojure plugins
     Plug 'Olical/conjure', {'branch': 'develop', 'for': ['clojure', 'fennel']}
     Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
-    Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']}
+    "Plug 'clojure-vim/clojure.vim', {'for': ['clojure', 'fennel']} " This is pulled in via vim-polyglot
     Plug 'NoahTheDuke/coc-clojure', {'for': ['clojure']}
     Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': ['clojure', 'fennel']}
     Plug 'guns/vim-clojure-highlight', {'for': ['clojure', 'fennel']}

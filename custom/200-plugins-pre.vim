@@ -52,11 +52,12 @@ let g:incsearch#auto_nohlsearch = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => clojure-vim/clojure-vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:clojure_align_multiline_strings = 1
-let g:clojure_align_subforms = 1
-let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH']
-let g:clojure_maxlines = 100
+let g:clojure_align_multiline_strings=1
+let g:clojure_align_subforms=1
+let g:clojure_cljfmt_compat=1
+let g:clojure_fuzzy_indent=1
+let g:clojure_fuzzy_indent_patterns=['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH']
+let g:clojure_maxlines=100
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => guns/vim-sexp
