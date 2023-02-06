@@ -13,7 +13,8 @@ require('lualine').setup {
         theme = 'OceanicNext'
     },
     sections = {
-        lualine_a = {
+        lualine_a = {'branch', 'diff', 'diagnostics'},
+        lualine_b = {
           {
             'buffers',
             show_filename_only = true,
@@ -21,12 +22,12 @@ require('lualine').setup {
           }
         },
         lualine_c = {
-            {
-                'filename',
-                file_status = true,
-                newfile_status = true,
-                path = 1
-            }
+            -- {
+            --     'filename',
+            --     file_status = true,
+            --     newfile_status = true,
+            --     path = 1
+            -- }
         }
     }
 }

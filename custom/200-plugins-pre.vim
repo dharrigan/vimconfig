@@ -26,6 +26,7 @@ let g:wordmotion_uppercase_spaces = ['-']
 let g:ale_disable_lsp = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
+let g:ale_html_tidy_options = '-q -e -language en -config /home/david/.config/tidy/config'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_pattern_options = {
@@ -165,7 +166,7 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => sheerun/vim-polyglot
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'csv']
 let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0

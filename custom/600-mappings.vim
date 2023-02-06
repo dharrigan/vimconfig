@@ -13,6 +13,9 @@ map <silent> <C-G> :se invhlsearch<CR>
 map Y y$
 map Q gq
 
+" I don't record things *ever*
+map q <Nop>
+
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 " note below, g* not g

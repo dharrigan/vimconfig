@@ -125,7 +125,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup html_augroup
   autocmd!
-  autocmd BufNewFile,BufRead *.html             setlocal smartindent
+  autocmd BufNewFile,BufRead *.html             setlocal smartindent tw=256
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,9 +149,9 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup justfile_augroup
   autocmd!
-  autocmd BufNewFile,BufRead .justfile          set ft=just
-  autocmd BufNewFile,BufRead Justfile           set ft=just
-  autocmd BufNewFile,BufRead justfile           set ft=just
+  autocmd BufNewFile,BufRead .justfile          set ft=just tw=256
+  autocmd BufNewFile,BufRead Justfile           set ft=just tw=256
+  autocmd BufNewFile,BufRead justfile           set ft=just tw=256
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
