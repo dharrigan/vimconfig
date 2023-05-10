@@ -29,7 +29,7 @@ set foldnestmax=10
 set formatoptions=tcqrn2j
 set go+=a
 set grepprg=rg\ --vimgrep
-set guifont=JetBrains\ Mono\ Regular:h13
+set guifont=JetBrainsMono\ Nerd\ Font\ Regular:h13
 set hidden
 set history=100
 set hlsearch
@@ -55,8 +55,8 @@ set nowrap
 set nowritebackup
 set number
 set omnifunc=syntaxcomplete#Complete
-set pdev=default
-set printoptions=paper:A4,duplex:off,collate:n,syntax:y,portrait:n,number:y
+"set pdev=default
+"set printoptions=paper:A4,duplex:off,collate:n,syntax:y,portrait:n,number:y
 set redrawtime=10000
 set relativenumber
 set rtp+=~/.fzf

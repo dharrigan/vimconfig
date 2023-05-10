@@ -89,6 +89,7 @@ augroup END
 augroup clojure_augroup
   autocmd!
   autocmd Filetype clojure              set tagfunc=CocTagFunc
+  autocmd Filetype clojure              setl lispwords+=do tw=256
   autocmd BufNewFile,BufRead *.edn      setf clojure
   autocmd BufEnter conjure-log-*.cljc   setf clojure
 augroup END

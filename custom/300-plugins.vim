@@ -3,6 +3,7 @@
 "
 call plug#begin('~/.vim/bundle')
 
+    Plug 'ConradIrwin/vim-bracketed-paste'
     Plug 'Olical/aniseed'
     Plug 'RRethy/vim-illuminate'
     Plug 'airblade/vim-gitgutter'
