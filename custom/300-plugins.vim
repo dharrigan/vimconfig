@@ -12,7 +12,11 @@ call plug#begin('~/.vim/bundle')
     Plug 'dbakker/vim-projectroot'
     Plug 'dense-analysis/ale'
     Plug 'docunext/closetag.vim'
-    Plug 'drewtempelmeyer/palenight.vim'
+    if has('nvim-0.9')
+        Plug 'drewtempelmeyer/palenight.vim'
+    else
+        Plug 'drewtempelmeyer/palenight.vim', {'commit': '847fcf5'}
+    endif
     Plug 'editorconfig/editorconfig-vim'
     Plug 'flazz/vim-colorschemes'
     Plug 'folke/which-key.nvim'
@@ -21,7 +25,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'junegunn/fzf.vim'
     Plug 'kshenoy/vim-signature'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'liuchengxu/vista.vim'
+"    Plug 'liuchengxu/vista.vim'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'luochen1990/rainbow'
     Plug 'machakann/vim-highlightedyank'

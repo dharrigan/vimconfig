@@ -34,7 +34,6 @@ set hidden
 set history=100
 set hlsearch
 set ignorecase
-set inccommand=split
 set incsearch
 set infercase
 set isfname-==
@@ -62,7 +61,6 @@ set relativenumber
 set rtp+=~/.fzf
 set rtp+=~/.fzf/bin
 set ruler
-set shada=!,'100,<50,s10,h
 set shiftround
 set shiftwidth=4
 set shortmess+=cA
@@ -104,9 +102,11 @@ set writeany
 set writebackup
 
 if has('nvim')
+    set encoding=utf-8
+    set inccommand=split
+    set shada=!,'100,<50,s10,h
     set ttimeout
     set ttimeoutlen=0
-    set encoding=utf-8
 endif
 
 if has('mouse')

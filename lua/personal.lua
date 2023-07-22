@@ -9,27 +9,27 @@ require('which-key').setup {
 }
 
 require('lualine').setup {
-    options = {
-        theme = 'OceanicNext'
+  options = {
+    theme = 'OceanicNext'
+  },
+  sections = {
+    lualine_a = {'branch', 'diff', 'diagnostics'},
+    lualine_b = {
+      {
+        'buffers',
+        show_filename_only = true,
+        mode = 2
+      }
     },
-    sections = {
-        lualine_a = {'branch', 'diff', 'diagnostics'},
-        lualine_b = {
-          {
-            'buffers',
-            show_filename_only = true,
-            mode = 2
-          }
-        },
-        lualine_c = {
-            -- {
-            --     'filename',
-            --     file_status = true,
-            --     newfile_status = true,
-            --     path = 1
-            -- }
-        }
-    }
+    -- lualine_c = {
+    --   {
+    --     'filename',
+    --     file_status = true,
+    --     newfile_status = true,
+    --     path = 1
+    --   }
+    -- }
+  }
 }
 
 require('octo').setup()
