@@ -1,10 +1,10 @@
 
-require('telescope').load_extension('emoji')
-require('telescope').load_extension('fzf')
-
 require('which-key').setup {
   plugins = {
     registers = false
+  },
+  triggers = {
+    { "<leader>", mode = {"n", "v"}},
   }
 }
 
@@ -21,23 +21,23 @@ require('lualine').setup {
         mode = 2
       }
     },
-    -- lualine_c = {
-    --   {
-    --     'filename',
-    --     file_status = true,
-    --     newfile_status = true,
-    --     path = 1
-    --   }
-    -- }
+    lualine_c = {}
   }
 }
 
-require('octo').setup()
+require('neogit').setup { }
+
+require('conform').setup({
+  formatters_by_ft = {
+    clojure = { "cljfmt" }
+  }
+})
 
 local actions = require("telescope.actions")
 
 require('telescope').setup {
   defaults = {
+    dynamic_preview_title = true,
     preview = {
       treesitter = false
     },
@@ -46,12 +46,7 @@ require('telescope').setup {
         ["<esc>"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-        ["<C-u>"] = false
-      }
-    },
-    pickers = {
-      find_files = {
-        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+        ["<C-u>"] = false,
       }
     },
     extensions = {
@@ -59,5 +54,13 @@ require('telescope').setup {
         fuzzy = false
       }
     }
+  },
+  pickers = {
+    find_files = {
+      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+    }
   }
 }
+
+require('telescope').load_extension('emoji')
+require('telescope').load_extension('fzf')

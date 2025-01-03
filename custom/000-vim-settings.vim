@@ -29,7 +29,8 @@ set foldnestmax=10
 set formatoptions=tcqrn2j
 set go+=a
 set grepprg=rg\ --vimgrep
-set guifont=JetBrainsMono\ Nerd\ Font\ Regular:h13
+"set guifont=JetBrainsMono\ Nerd\ Font\ Regular:h13
+set guifont=Berkeley\ Mono\ Regular:h13
 set hidden
 set history=100
 set hlsearch
@@ -75,7 +76,7 @@ set smartcase
 set smarttab
 set softtabstop=4
 set spelllang=en_gb
-set splitbelow
+"set splitbelow
 set startofline
 set statusline=%<%F%h%m%r%=%{&ff}\ %l,%c%V\ %P\ %#warningmsg#\ %*
 set tabstop=4

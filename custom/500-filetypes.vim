@@ -74,6 +74,10 @@ augroup autopairs_augroup
   autocmd Filetype lisp,scheme,clojure,lfe let b:AutoPairs = {}
 augroup END
 
+"augroup gitcommit_augroup
+"  autocmd FileType gitcommit  DiffGitCached
+"augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Asciidoc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -119,6 +123,14 @@ augroup git_augroup
   autocmd BufNewFile,BufRead .gitconfig*        setlocal ft=gitconfig nolist ts=4 sw=4
   autocmd VimEnter COMMIT_EDITMSG               call OpenCommitMessageDiff()
   autocmd VimEnter COMMIT_EDITMSG               call lexical#init()
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => haproxy
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup haproxy_augroup
+  autocmd!
+  autocmd Filetype haproxy                      set expandtab ts=4 sw=4 tw=256
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

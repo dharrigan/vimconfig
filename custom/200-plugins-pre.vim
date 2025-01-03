@@ -46,12 +46,13 @@ let g:ale_pattern_options = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:palenight_terminal_italics=1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => eraserhd/parinfer-rust
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:parinfer_mode='smart'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => eraserhd/parinfer-rust
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:parinfer_comment_char=';;'
 let g:parinfer_force_balance=1
-
+let g:parinfer_mode='smart'
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => haya14busa/incsearch.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +65,7 @@ let g:clojure_align_multiline_strings=1
 let g:clojure_align_subforms=1
 let g:clojure_cljfmt_compat=1
 let g:clojure_fuzzy_indent=1
-let g:clojure_fuzzy_indent_patterns=['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH']
+let g:clojure_fuzzy_indent_patterns=['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH', 'expecting', 'context', 'try', 'finally', 'side-effects', 'more-of', 'expect']
 let g:clojure_maxlines=100
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -82,14 +83,6 @@ let g:clap_open_preview = 'never'
 let g:clap_popup_input_delay = 5
 let g:clap_provider_grep_delay = 5
 let g:clap_provider_grep_opts = '-H --no-heading --vimgrep --smart-case --hidden -g "!.git/"'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => liuchengxu/vista.vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vista#renderer#enable_icon = 1
-let g:vista_close_on_jump=1
-let g:vista_sidebar_position="vertical topleft"
-let g:vista_sidebar_width=60
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => luochen1990/rainbow
@@ -129,19 +122,19 @@ let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'help']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => olical/conjure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:conjure#log#botright = 1
-let g:conjure#log#hud#height = 0.95
-let g:conjure#eval#comment_prefix = ";; "
-let g:conjure#mapping#def_word = v:false
-let g:conjure#mapping#doc_word = v:false
-let g:conjure#eval#gsubs = {'do-comment': ['^%(comment[%s%c]', '(do ']}
-let g:conjure#client#clojure#nrepl#test#current_form_names = ['deftest', 'defexpect']
-let g:conjure#client#clojure#nrepl#connection#auto_repl#hidden = v:true
-let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
-let g:conjure#highlight#enabled = 1
-let g:conjure#highlight#timeout = 250
 let g:conjure#client#clojure#nrepl#connection#auto_repl#enabled = v:false
 let g:conjure#client#clojure#nrepl#connection#auto_repl#hidden = v:true
+let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
+let g:conjure#client#clojure#nrepl#refresh#backend = 'clj-reload'
+let g:conjure#client#clojure#nrepl#test#current_form_names = ['deftest', 'defexpect']
+let g:conjure#eval#comment_prefix = ";; "
+let g:conjure#eval#gsubs = {'do-comment': ['^%(comment[%s%c]', '(do ']}
+let g:conjure#highlight#enabled = 1
+let g:conjure#highlight#timeout = 250
+let g:conjure#log#botright = 1
+let g:conjure#log#hud#height = 0.95
+let g:conjure#mapping#def_word = v:false
+let g:conjure#mapping#doc_word = v:false
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => preservim/nerdtree
@@ -173,7 +166,7 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => sheerun/vim-polyglot
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:polyglot_disabled = ['markdown', 'csv']
+let g:polyglot_disabled = ['markdown', 'csv', 'clojure', 'just']
 let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0

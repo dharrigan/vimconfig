@@ -9,7 +9,6 @@ map <C-H> :bp<CR>
 noremap <F7> :cprevious<CR>
 noremap <F8> :cnext<CR>
 noremap <F9> :cclose<CR>
-map <silent> <C-G> :se invhlsearch<CR>
 map Y y$
 map Q gq
 
@@ -50,7 +49,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <F2> :Vista!!<CR>
 
 " Vim Projectionist, edit alternative file.
 nmap t :A<cr>
@@ -76,11 +74,16 @@ nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 nnoremap <silent> <Leader>`         :QFix<CR>
 nnoremap <silent> <Leader>gb        :Git blame<cr>
 nnoremap <silent> <Leader>wo        :CocCommand workspace.showOutput clojure<cr>
+nnoremap <silent> <Leader>g         :se invhlsearch<cr>
+nnoremap <silent> <Leader>ob        :BufOnly<cr>
+nnoremap <silent> <Leader>rm        :Delete!<cr>
 
 nnoremap <silent> <Leader>a         <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Leader>b         <cmd>Telescope buffers<cr>
-nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
 nnoremap <silent> <Leader>e         <cmd>Telescope emoji<cr>
+nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
+nnoremap <silent> <Leader>g         <cmd>Telescope grep_string<cr>
+nnoremap <silent> <Leader>j         <cmd>Telescope jumplist<cr>
 
 function! s:goto_tag(tagkind) abort
   let tagname = expand('<cWORD>')
@@ -179,7 +182,7 @@ command! -bang -nargs=* Rg
 \   <bang>0)
 
 " Insert UUIDs via ctrl+u
-"inoremap <c-u> <c-r>=trim(system('uuidgen'))<cr>
-"nnoremap <c-u> i<c-r>=trim(system('uuidgen'))<cr><esc>
+inoremap <c-4> <space>"<c-r>=trim(system('uuidgen'))<cr>"
+nnoremap <c-4> i<space>"<c-r>=trim(system('uuidgen'))<cr>"<esc>
 
 " vim: set syntax=vim:
