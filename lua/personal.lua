@@ -25,8 +25,6 @@ require('lualine').setup {
   }
 }
 
-require('neogit').setup { }
-
 require('conform').setup({
   formatters_by_ft = {
     clojure = { "cljfmt" }

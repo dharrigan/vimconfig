@@ -5,7 +5,7 @@ call plug#begin('~/.vim/bundle')
 
     Plug 'ConradIrwin/vim-bracketed-paste'
     Plug 'NoahTheDuke/vim-just'
-    Plug 'RRethy/vim-illuminate'
+    "Plug 'RRethy/vim-illuminate'
     Plug 'airblade/vim-gitgutter'
     Plug 'chaoren/vim-wordmotion'
     Plug 'conradirwin/vim-bracketed-paste'
@@ -19,7 +19,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'flazz/vim-colorschemes'
     Plug 'haya14busa/incsearch.vim'
-    Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
+    Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'kshenoy/vim-signature'
     Plug 'luochen1990/rainbow'
@@ -40,7 +40,6 @@ call plug#begin('~/.vim/bundle')
     Plug 'yggdroot/indentline'
 
     " nvim_lua is defined
-    Plug 'NeogitOrg/neogit'
     Plug 'Olical/aniseed'
     Plug 'folke/which-key.nvim'
     Plug 'kyazdani42/nvim-web-devicons'

@@ -27,7 +27,6 @@ set foldlevel=1
 set foldmethod=indent
 set foldnestmax=10
 set formatoptions=tcqrn2j
-set go+=a
 set grepprg=rg\ --vimgrep
 "set guifont=JetBrainsMono\ Nerd\ Font\ Regular:h13
 set guifont=Berkeley\ Mono\ Regular:h13
