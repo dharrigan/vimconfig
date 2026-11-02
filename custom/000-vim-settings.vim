@@ -42,7 +42,8 @@ set lazyredraw
 set linebreak
 set listchars=tab:>-,trail:.,extends:*,precedes:.,eol:¶
 set matchtime=2
-set modelines=5
+set modeline
+set modelines=2
 set nobackup
 set nocindent
 set noconfirm

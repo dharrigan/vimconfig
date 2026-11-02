@@ -3,13 +3,6 @@
 "
 
 "
-" Not a plugin, but controls how neovide displays stuff.
-"
-let g:neovide_floating_opacity = 0.9
-let g:neovide_floating_blur = 0.0
-let g:neovide_cursor_vfx_mode = "railgun"
-
-"
 " Not a plugin, but controles how rustfmtc., works.
 "
 let g:rustfmt_autosave = 1
@@ -65,7 +58,37 @@ let g:clojure_align_multiline_strings=1
 let g:clojure_align_subforms=1
 let g:clojure_cljfmt_compat=1
 let g:clojure_fuzzy_indent=1
-let g:clojure_fuzzy_indent_patterns=['^with', '^def', '^let', '-tpl$', 'POST', 'GET', 'PUT', 'DELETE', 'PATCH', '^expecting', '^context', '^try', '^finally', '^side-effects', '^more-of', '^expect', '^when-', '^fn\*']
+let g:clojure_fuzzy_indent_patterns=[
+    \'-tpl$',
+    \'DELETE',
+    \'GET',
+    \'PATCH',
+    \'POST',
+    \'PUT',
+    \'cond',
+    \'context',
+    \'createAbsentMessageRepresentation',
+    \'def',
+    \'defcolumns'
+    \'defschema',
+    \'expect',
+    \'expecting',
+    \'finally',
+    \'fn\*',
+    \'js-await',
+    \'let',
+    \'more-of',
+    \'resolveMessage',
+    \'side-effects',
+    \'start',
+    \'stop',
+    \'try',
+    \'when-',
+    \'when-let*',
+    \'with',
+    \'with-rate-limiter',
+    \'with-transaction',
+    \]
 let g:clojure_maxlines=100
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -133,6 +156,7 @@ let g:conjure#highlight#enabled = 1
 let g:conjure#highlight#timeout = 250
 let g:conjure#log#botright = 1
 let g:conjure#log#hud#height = 0.95
+let g:conjure#log#strip_ansi_escape_sequences_line_limit = 0
 let g:conjure#mapping#def_word = v:false
 let g:conjure#mapping#doc_word = v:false
 

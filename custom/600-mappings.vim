@@ -73,7 +73,6 @@ nnoremap <silent> <Leader>hp        <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> <Leader>s         :NERDTreeFind<CR>
 nnoremap <silent> <Leader>`         :QFix<CR>
 nnoremap <silent> <Leader>gb        :Git blame<cr>
-nnoremap <silent> <Leader>wo        :CocCommand workspace.showOutput clojure<cr>
 nnoremap <silent> <Leader>g         :se invhlsearch<cr>
 nnoremap <silent> <Leader>ob        :BufOnly<cr>
 nnoremap <silent> <Leader>rm        :Delete!<cr>
@@ -84,6 +83,9 @@ nnoremap <silent> <Leader>e         <cmd>Telescope emoji<cr>
 nnoremap <silent> <Leader>f         <cmd>Telescope find_files<cr>
 nnoremap <silent> <Leader>g         <cmd>Telescope grep_string<cr>
 nnoremap <silent> <Leader>j         <cmd>Telescope jumplist<cr>
+
+" Sort words in a selected line, very handy!
+xnoremap <silent> <leader>s         :<C-u>normal! gv"zy<CR>:let @z = join(sort(split(@z, '\s\+')), ' ')<CR>:normal! gv"zp<CR>
 
 function! s:goto_tag(tagkind) abort
   let tagname = expand('<cWORD>')
@@ -110,13 +112,7 @@ nmap <silent> <Leader>co            :call CocActionAsync('showOutgoingCalls')<CR
 nmap <silent> <Leader>cr            <Plug>(coc-rename)
 nmap <silent> <Leader>ca            <Plug>(coc-codeaction-selected)
 
-"nmap <silent> <Leader>cI            <Plug>(coc-implementation)<CR>
-"nmap <silent> <Leader>cs            <Plug>(coc-references)
-"nmap <silent> gd                    <Plug>(coc-definition)
-
 " https://github.com/neoclide/coc.nvim/issues/1054
-nmap <silent> <Leader>gI            :call <SID>goto_tag("Implementation")<CR>
-nmap <silent> <Leader>gs            :call <SID>goto_tag("References")<CR>
 nmap <silent> gd                    :call <SID>goto_tag("Definition")<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,13 +132,6 @@ inoremap <silent> <expr><C-k>       coc#pum#visible() ? coc#pum#prev(1) : "\<C-p
 inoremap <silent> <expr><c-space>   coc#refresh()
 inoremap <silent> <expr><cr>        coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
-
-nmap <S-Right> <Plug>(sexp_capture_next_element)<Plug>(sexp_indent)
-nmap <S-Left> <Plug>(sexp_emit_tail_element)<Plug>(sexp_indent)
-imap <S-Right> <C-O><Plug>(sexp_capture_next_element)<C-O><Plug>(sexp_indent)
-imap <S-Left> <C-O><Plug>(sexp_emit_tail_element)<C-O><Plug>(sexp_indent)
-vmap <e <Plug>(sexp_swap_element_backward)
-vmap >e <Plug>(sexp_swap_element_forward)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Show Documentation
@@ -182,7 +171,7 @@ command! -bang -nargs=* Rg
 \   <bang>0)
 
 " Insert UUIDs via ctrl+u
-inoremap <c-4> <space>"<c-r>=trim(system('uuidgen'))<cr>"
-nnoremap <c-4> i<space>"<c-r>=trim(system('uuidgen'))<cr>"<esc>
+inoremap <c-4> <c-r>=trim(system('uuidgen'))<cr>
+nnoremap <c-4> i<c-r>=trim(system('uuidgen'))<cr><esc>
 
 " vim: set syntax=vim:

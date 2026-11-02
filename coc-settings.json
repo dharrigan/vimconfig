@@ -1,28 +1,66 @@
 {
   "callHierarchy.splitCommand": "bel 10sp",
+  "clojure.enable": true,
+  "clojure.executable": "clojure-lsp",
   "clojure.initialization-options.semantic-tokens?": true,
+  "clojure.initialization-options.copy-kondo-configs?": true,
+  "clojure.initialization-options.log-path": "/tmp/clojure-lsp.out",
   "clojure.initialization-options.use-metadata-for-privacy?": true,
+  "clojure.initialization-options.hover": {
+    "clojuredocs": true,
+    "arity-on-same-line?": false
+  },
+  "clojure.initialization-options.java": {
+    "download-jdk-source?": true
+  },
   "clojure.lsp-check-on-start": false,
   "clojure.startup-message": true,
   "clojure.trace.server": "verbose",
   "[clojure]": {
     "semanticTokens.enable": true
   },
-  "coc.preferences.extensionUpdateCheck": "daily",
+  "javascript.validate.enable": false,
+  "tsserver.enable": true,
+  "tsserver.disableAutomaticTypeAcquisition": false,
+  "tsserver.implicitProjectConfig.module": "CommonJS",
+  "tsserver.implicitProjectConfig.target": "ES2022",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.format.enable": false,
+  "extensions.updateCheck": "daily",
   "coc.preferences.messageLevel": "error",
   "workspace.rootPatterns": [
+    ".git",
+    ".projections.json",
+    "bb.edn",
     "deps.edn",
     "project.clj",
-    ".git",
-    ".projections.json"
+    "shadow-cljs.edn"
+  ],
+  "workspace.ignoredFolders": [
+      "$HOME",
+      "$HOME/.cargo/**",
+      "$HOME/.rustup/**"
   ],
   "coc.preferences.useQuickfixForLocations": false,
   "codeLens.enable": true,
   "codeLens.position": "eol",
+  "codeLens.separator": "->",
+  "hover.floatConfig": { "winblend": 0 },
+  "inlayHint.display": false,
+  "signature.enable": true,
+  "signature.floatConfig": { "winblend": 0 },
+  "diagnostic.displayByAle": false,
   "diagnostic.floatConfig": {
     "border": true,
-    "maxWidth": 256
+    "maxWidth": 256,
+    "winblend": 0
   },
+  "suggest.detailField": "abbr",
+  "suggest.floatConfig": { "winblend": 0 },
+  "suggest.minTriggerInputLength": 2,
+  "suggest.noselect": true,
+  "suggest.triggerCompletionWait": 10,
+  "suggest.enableFloat": false,
   "suggest.maxCompleteItemCount": 15,
   "suggest.removeDuplicateItems": true,
   "suggest.snippetIndicator": "->",
@@ -52,5 +90,8 @@
     "unit": "塞",
     "value": "",
     "variable": ""
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://www.schemastore.org": true
   }
 }

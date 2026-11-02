@@ -62,3 +62,28 @@ require('telescope').setup {
 
 require('telescope').load_extension('emoji')
 require('telescope').load_extension('fzf')
+
+require('nvim-treesitter').install({'clojure', 'java', 'javascript', 'json', 'just', 'tsx', 'typescript'})
+
+require('nvim-paredit').setup()
+
+require('nvim-autopairs').setup {
+  break_undo = false,
+  enable_check_bracket_line = false,
+  map_cr = false
+}
+
+require("nvim-autopairs").get_rules("'")[1].not_filetypes = { "lisp", "clojure" }
+require("nvim-autopairs").get_rules("`")[1].not_filetypes = { "lisp", "clojure" }
+
+vim.api.nvim_set_hl(0, "@string.escape.clojure", { fg = "white" })
+vim.api.nvim_set_hl(0, "@string.regexp.clojure", { fg = "#bfc7d5" })
+vim.api.nvim_set_hl(0, "@string.regexp.typescript", { fg = "#bfc7d5" })
+vim.api.nvim_set_hl(0, "@string.special.symbol", { fg = "#f07178" })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'clojure', 'java', 'javascript', 'json', 'just', 'tsx', 'typescript' },
+  callback = function()
+    vim.treesitter.start()
+  end,
+})

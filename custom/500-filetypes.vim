@@ -92,9 +92,9 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup clojure_augroup
   autocmd!
-  autocmd Filetype clojure              set tagfunc=CocTagFunc tw=256
-  autocmd BufNewFile,BufRead *.edn      setf clojure
-  autocmd BufEnter conjure-log-*.cljc   setf clojure
+  autocmd Filetype              clojure               set tagfunc=CocTagFunc tw=108
+  autocmd BufNewFile,BufRead    *.edn                 setf clojure
+  autocmd BufWinEnter,WinEnter  conjure-log-*.cljc    setf clojure
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
